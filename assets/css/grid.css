@@ -1,0 +1,28 @@
+.container{
+	margin: 0 auto;
+}
+
+
+@media (max-width: 575.98px) {
+	.container{width: 95%;}
+}
+
+/* XS  */
+@media (min-width: 576px) and (max-width: 767.98px) {
+	.container{width: 540px;}
+}
+
+/* SM  */
+@media (min-width: 768px) and (max-width: 991.98px) {
+	.container{width: 720px;}
+}
+
+/* LG  */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+	.container{width: 960px;}
+}
+
+/* XL  */
+@media (min-width: 1200px) {
+	.container{width: 1180px;}
+}

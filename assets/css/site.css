@@ -1,0 +1,1237 @@
+/*
+	Mor: 933EC5
+*/
+
+body{
+	background-color: #f9f9f9;
+	font-family: 'Roboto', sans-serif;
+	font-size: 14px;
+	color: #333;
+}
+
+a{
+	text-decoration: none;
+	color: #333;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ddd;
+    padding: 0;
+    margin-left: 20px;
+    margin-right: 20px; 
+}
+
+
+.clearfix{
+	clear: both;
+}
+
+.ustmenu{
+	background-color: #fff;
+	height: 60px;
+	position: fixed;
+	width: 100%;
+	-webkit-box-shadow: 0px 0px 5px 0px rgba(196,196,196,1);
+	-moz-box-shadow: 0px 0px 5px 0px rgba(196,196,196,1);
+	box-shadow: 0px 0px 5px 0px rgba(196,196,196,1);
+	z-index: 5;
+}
+
+.ustmenu .logo{
+	display: block;
+	float: left;
+	height: 55px;
+	width: 120px;
+}
+
+.ustmenu .logo img{
+	height: 30px;
+	padding-left: 15px;
+	width: auto;
+	max-width: 120px;
+	display: block;
+	margin-top: 15px;
+}
+
+.ustmenu .ara{
+	float: left;
+	display: block;
+	width: calc(100% - 350px);
+	height: 55px;
+	margin-left: 30px;
+}
+
+.ustmenu .ara form{
+	padding: 0px 20px;
+	margin-top: 13px;
+}
+
+.ustmenu .ara input[type="text"]{
+	border : 1px solid #ddd;
+	height: 30px;
+	line-height: 30px;
+	width: calc(100% - 160px);
+	font-size: 13px;
+	padding-left: 15px;
+	font-family: 'Roboto', sans-serif;
+	float: left;
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+	color: #333;
+	font-weight: 500;
+}
+
+.ustmenu .ara input[type="text"]::placeholder{
+	font-weight: 400;
+}
+
+.ustmenu .ara button.submit{
+	background-color: #fafafa;
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+	width: 50px;
+	border:none;
+	float: left;
+	height: 34px;
+	border: 1px solid #ddd;
+	border-left: none;
+	cursor: pointer;
+}
+
+.ustmenu .giris{
+	width: 200px;
+	height: 55px;
+	float: right;
+	display: block;
+	text-align: right;
+	position: relative;
+}
+
+.ustmenu .giris a.buton{
+	padding: 8px 15px;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	color: #933EC5;
+	margin-top:	15px;
+	display: inline-block;
+	color: #333;
+	text-transform: uppercase;
+	font-weight: 500;
+	font-size: 13px;
+	margin-left: 5px;
+}
+
+.ustmenu .giris a.buton:hover{
+	border-color: #afadad;
+	transition: 0.3s;
+}
+
+.sidebar{
+	float: left;
+	width: 300px;
+	display: block;
+	margin-top: 90px;
+	border-radius: 3px;
+	padding: 12px 0px 20px 0px;
+	position: fixed;
+	height: calc(100% - 165px);
+	max-height: calc(100% - 165px);
+	overflow: hidden;
+	background-color: #fff;
+	border : 1px solid #ddd;
+}
+
+.sidebaric{
+	overflow-y: auto;
+	height: 100%;
+}
+
+.site{
+	float: left;
+	margin-left: 300px;
+	width: calc(100% - 280px);
+	display: block;
+	margin-top: 80px;
+}
+
+.anasayfa{
+	margin-top: 90px;
+}
+
+.sidebar ul{
+	padding: 0px 10px;
+}
+
+.sidebar ul li{
+	
+	border-radius: 2px;
+}
+
+.sidebar ul li:hover{
+	background-color: #f2f2f2;
+	transition: 0.1s;
+}
+
+.sidebar ul li.active{
+	background-color: #f2f2f2;
+	font-weight: 500;
+	color: #111;
+}
+
+.sidebar ul li a{
+	display: block;
+	padding: 12px 15px;
+	font-size: 14px;
+}
+
+.sidebar ul li a i{
+	margin-right: 8px;
+	font-size: 17px;
+	color: #636363;
+}
+
+.sidebar ul li.active a i{
+	color: #ce1212;
+}
+
+.sidebar label{
+	text-transform: uppercase;
+	font-weight: 500;
+	color: #555;
+	font-size: 15px;
+	letter-spacing: 0.3px;
+	display: block;
+	padding: 15px 25px 10px;
+}
+
+.sidebar p{
+	padding: 5px 25px;
+	line-height: 18px;
+	font-size: 13px;
+}
+
+.sidebar p a{
+	border-bottom: 1px dotted #aaa;
+}
+
+.sidebar p a:hover{
+	border-bottom: 1px solid #666;
+}
+
+.siteic .video{
+	margin-left: 30px;
+	width: 190px;
+	height: 190px;
+	border: none;
+	float: left;
+	margin-bottom: 20px;
+	position: relative;
+}
+
+.siteic .video img{
+	display: block;
+	width: 190px;
+	height: 105px;
+	border-radius: 2px;
+}
+
+.siteic .video .baslik{
+	margin-top: 10px;
+	max-height: 44px;
+	overflow: hidden;
+	line-height: 22px;
+}
+
+.siteic .video .baslik a{
+	display: block;
+	font-size: 14px;
+	font-weight: 500;
+}
+
+.siteic .video p.kanal{
+	display: block;
+	font-size: 13px;
+	padding: 8px 0px;
+}
+
+
+.siteic .video p.kanal i{
+	color: #666;
+}
+
+.siteic .video .onizleme{
+	position: absolute;
+	background-color: rgba(0, 0, 0, 0.27);
+	width: 190px;
+	height: 105px;
+	color: #fff;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+	display: none;
+}
+
+.siteic .video .onizleme i{
+	font-size: 50px;
+	margin-top: 25px;
+}
+
+/*
+.siteic .video:hover .onizleme{
+	display: block;
+	transition: 0.3s;
+}
+*/
+
+.girisbox{
+	margin: 10px 20px;
+	margin-bottom: 20px;
+	padding: 30px;
+	background: #fff;
+	border-radius: 2px;
+	border: 1px solid #ddd;
+}
+
+.girisbox input[type="text"], .girisbox input[type="password"], .girisbox input[type="email"]{
+	display: block;
+	margin-bottom: 10px;
+	width: 45%;
+}
+
+.girisbox label{
+	margin-bottom: 12px;
+	display: block;
+}
+
+.girisbox input.uzuntextbox{
+	width: 70%;
+}
+
+.girisbox button{
+	background: #3498db;
+	border: 1px solid #2980b9;
+	width: calc(45% + 20px);
+	color: #fff;
+	border-radius: 6px;
+	padding: 10px 0px;
+	cursor: pointer;
+	display: block;
+}
+
+.girisbox button.uzunbutton{
+	width: calc(70% + 20px);
+	margin-top: 20px;
+}
+
+.girisbox h2{
+	padding: 0px 0px 15px;
+	font-size: 30px;
+	font-weight: 600;
+	color: #444;
+}
+
+.girisbox h2 i{
+	float: right;
+}
+
+.girisbox p{
+	margin-bottom: 25px;
+	color: #666;
+}
+
+input.textbox{
+	background: #fff;
+	border: 1px solid #dcdcdc;
+	border-radius: 6px;
+	padding: 8px 10px;
+	font-family: 'Roboto', sans-serif;
+
+}
+
+.icerik{
+	margin-bottom: 30px;
+}
+
+.uzunliste{
+	margin: 10px 20px;
+}
+
+.videouzun{
+	height: 120px;
+	width: 100%;
+	margin-bottom: 20px;
+
+}
+
+.videouzun .onizleme{
+	display: none;
+}
+
+.videouzun img{
+	width: 214px;
+	height: 120px;
+	display: block;
+	float: left;
+	border-radius: 1px;
+	margin-right: 20px;
+}
+
+.videouzun .baslik{
+	display: block;
+	max-height: 50px;
+	overflow: hidden;
+	line-height: 25px;
+	font-size: 16px;
+	letter-spacing: -0.5px;
+	margin-left: 20px;
+	color: #4d4d4d;
+	font-weight: 400;
+}
+
+.videouzun p{
+	display: block;
+}
+
+.videouzun .kanal{
+	margin-top: 5px;
+	color: #333;
+	font-size: 13px;
+}
+
+.videouzun .kanal a{
+	color: #333;
+	font-size: 13px;
+}
+
+.videouzun .aciklama{
+	color: #8f8f8f;
+	max-height: 40px;
+	overflow: hidden;
+	line-height:  20px;
+	font-size: 13px;
+	margin-top: 10px;
+}
+
+.sidebaric::-webkit-scrollbar{
+  width: 4px;
+  height: 4px;
+}
+.sidebaric::-webkit-scrollbar-button{
+  width: 0px;
+  height: 0px;
+}
+.sidebaric::-webkit-scrollbar-thumb{
+  background: #ccc;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+.sidebaric::-webkit-scrollbar-thumb:hover{
+  background: #ccc;
+}
+.sidebaric::-webkit-scrollbar-thumb:active{
+  background: #000000;
+}
+.sidebaric::-webkit-scrollbar-track{
+  background: #eee;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+.sidebaric::-webkit-scrollbar-track:hover{
+  background: #eee;
+}
+.sidebaric::-webkit-scrollbar-track:active{
+  background: #eee;
+}
+.sidebaric::-webkit-scrollbar-corner{
+  background: transparent;
+}
+
+.sabitsayfa{
+	margin-top: 10px;
+	padding: 0px 20px 10px;
+}
+
+.sabitsayfa{
+	font-size: 14px;
+	color: #333;
+}
+
+.sabitsayfa p{
+	line-height: 18px;
+	padding: 5px 0px;
+}
+
+.sabitsayfa a{
+	border-bottom: 1px dotted #4834d4;
+	color: #4834d4;
+}
+
+.sabitsayfa a:hover{
+	border-bottom: 1px solid #4834d4;
+}
+
+.sabitsayfa h6{
+	font-size: 16px;
+	font-weight: 500;
+	padding: 20px 0px 10px;
+}
+
+.sabitsayfa h5{
+	font-size: 18px;
+	font-weight: 500;
+	padding: 20px 0px 10px;
+}
+
+.sabitsayfa h4{
+	font-size: 20px;
+	font-weight: 500;
+	padding: 20px 0px 10px;
+}
+
+.sabitsayfa h3{
+	font-size: 23px;
+	font-weight: 500;
+	padding: 20px 0px 10px;
+}
+
+.sabitsayfa h3{
+	font-size: 26px;
+	font-weight: 500;
+	padding: 20px 0px 10px;
+}
+
+.sabitsayfa h2{
+	font-size: 29px;
+	font-weight: 500;
+	padding: 20px 0px 10px;
+}
+
+.sabitsayfa h1{
+	font-size: 32px;
+	font-weight: 500;
+	padding: 20px 0px 10px;
+}
+
+.sabitsayfa ul{
+	margin: 15px 25px;
+	list-style-type: disc; 
+   	list-style-position: inside; 
+}
+
+.sabitsayfa ol ul, .sabitsayfa ul ul{
+	list-style-type: disc; 
+   	list-style-position: inside; 
+   	margin: 5px 15px;
+}
+
+.sabitsayfa ol{
+	margin: 15px 25px;
+	list-style-type: decimal; 
+   	list-style-position: inside;
+}
+
+.sabitsayfa ol ol, .sabitsayfa ul ol{
+	list-style-type: decimal; 
+   	list-style-position: inside; 
+   	margin: 5px 15px;
+}
+
+.sabitsayfa li{
+	line-height: 18px;
+}
+
+.sabitsayfa img{
+	max-width: 100%;
+	height: auto;
+}
+
+.sayfavideo{
+	margin-left: 20px;
+	margin-top: 10px;
+}
+
+.sidebarvideo{
+	position: static;
+}
+
+.sitevideo{
+	float: left;
+	margin-left: 0px;
+}
+
+.playerdiv{
+	margin-right: 30px;
+}
+
+.playerdiv video{
+	widows: 100%;
+}
+
+.sidebar .onerilen{
+	margin-bottom: 10px;
+}
+
+.sidebar .onerilen .onizleme{
+	display: none;
+}
+
+.sidebar .onerilen img{
+	width: 140px;
+	height: 78px;
+	display: block;
+	float: left;
+	border-radius: 1px;
+	margin-right: 14px;
+}
+
+.sidebar .onerilen .baslik{
+	display: block;
+	max-height: 57px;
+	overflow: hidden;
+	line-height: 19px;
+	font-size: 14px;
+	letter-spacing: -0.7px;
+	margin-left: 10px;
+	color: #4d4d4d;
+	font-weight: 400;
+}
+
+.sidebar .onerilen .kanal a{
+	color: #333;
+	font-size: 11px;
+	border: none;
+	text-decoration: none;
+}
+
+.videobilgi{
+	margin-top: 20px;
+	margin-right: 30px;
+	height: 52px;
+}
+
+.videobilgi .kanalbilgi{
+	display: inline-block;
+}
+
+.videobilgi .kanalbilgi img{
+	width: 50px;
+	height: 50px;
+	border-radius: 100px;
+	float: left;
+	margin-right: 15px;
+}
+
+.videobilgi .kanalbilgi .kanalbilgitext{
+	display: block;
+	float: left;
+}
+
+.videobilgi .kanalbilgi a.kanalisim{
+	font-weight: 500;
+	color: #333;
+	margin-top: 6px;
+	display: block;
+}
+
+.videobilgi .kanalbilgi a.kanalisim i{
+	font-weight: 400;
+	color: #0097e6;
+	margin-left: 3px;
+	font-size: 13px;
+}
+
+.videobilgi .kanalbilgi span{
+	display: block;
+	color: #aaa;
+	font-size: 12px;
+	margin-top: 8px;
+}
+
+.videobilgi .begenibilgi{
+	float: right;
+	display: inline-block;
+}
+
+.videobilgi .begenibilgi a{
+	background: #fff;
+	border: 1px dashed #aaa;
+	border-radius: 0px;
+	padding: 8px 12px;
+	cursor: pointer;
+	display: inline-block;
+	margin-top:10px;
+	color : #555;
+	margin-left: 5px;
+	font-size: 13px;
+}
+
+.videobilgi .begenibilgi a i{
+	font-size: 15px;
+	margin-right: 5px;
+}
+
+.videobilgi .begenibilgi a.like:hover{
+	border-color: #218c74;
+	border-style: solid;
+	color: #218c74;
+}
+
+.videobilgi .begenibilgi a.dislike:hover{
+	border-color: #b33939;
+	border-style: solid;
+	color: #b33939;
+}
+
+.videobilgi .begenibilgi a.aktif{
+	border: none;
+	color: #fff;
+	background: #34ace0;
+}
+
+.videobilgi .begenibilgi a.aktif:hover{
+	color: #fff;
+	border: none;
+	transition: 0.3s;
+	background: #227093;
+	border-radius: 1px;
+}
+
+.videobaslik h1{
+	display: block;
+	font-size: 19px;
+	letter-spacing: -0.3px;
+	margin-top: 25px;
+	margin-right: 30px;
+}
+
+.videobaslik h1 span{
+	float: right;
+	font-size: 13px;
+	color: #666;
+}
+
+.videobaslik h1 b{
+	font-weight: 500;
+}
+
+.videobaslik h1 i{
+	margin-right: 5px;
+}
+
+.videoaciklama{
+	margin-right: 30px;
+	margin-top: 25px;
+}
+
+.videoaciklama .metin{
+	line-height: 20px;
+	font-size: 13px;
+	font-weight: 400;
+	letter-spacing: 0px;
+	max-height: 40px;
+	overflow: hidden;
+}
+
+.videoaciklama p.devaminigor{
+	text-align: center;
+	border-bottom: 1px solid #ccc;
+	height: 8px;
+	margin-top: 20px;
+}
+
+.videoaciklama p.devaminigor a{
+	padding: 3px 10px;
+	font-size: 12px;
+	border-radius: 4px;
+	margin-top: 25px;
+	border: 1px solid #ccc;
+	z-index: 2;
+	background-color: #fff;
+}
+
+.yorumlar{
+	margin-top: 30px;
+	margin-right: 30px;
+}
+
+.yorumlar h3{
+	margin-bottom: 20px;
+	font-size: 16px;
+	color: #111;
+	font-weight: 500;
+}
+
+.yorumbox{
+	overflow: auto;
+}
+
+.yorumbox .yorumresim{
+	float: left;
+}
+
+.yorumbox .yorumresim img{
+	width: 45px;
+	height: 45px;
+	border-radius: 100px;
+	display: block;
+}
+
+.yorumbox .yorumic{
+	margin-left: 60px;
+}
+
+.yeniyorum .yorumic{
+	margin-top: 10px;
+	color: #666;
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 8px;
+	cursor: pointer;
+}
+
+.yorumlar .yorum{
+	margin-top: 20px;
+}
+
+.yorumlar .yeniyorum{
+	margin-bottom: 35px;
+}
+
+.yorumlar .yorum .yorumic{
+
+}
+
+.yorum .yorumic a.kanalisim{
+	margin-top: 5px;
+	margin-bottom: 10px;
+	font-weight: 600;
+	display: inline-block;
+	color: #111;
+}
+
+.yorum .yorumic a.yorumbuton{
+	letter-spacing: 0.3px;
+	display: inline-block;
+	text-transform: uppercase;
+	padding: 8px 7px 8px 8px;
+	text-align: center;	
+	margin-top: 10px;
+	font-size: 13px;
+	color: #555;
+	font-weight: 500;
+	border-radius: 100px;
+}
+
+.yorum .yorumic a.yorumbuton:hover{
+	background-color: #ededed;
+	transform: 0.4s;
+}
+
+.yorum .yorumic a.yorumbuton i{
+	margin-right: 3px;
+	font-size: 14px;
+}
+
+
+.yorum .yorumic p{
+	color: #444;
+	font-size: 13px;
+	line-height: 20px;
+}
+
+.yorum .yorumic span{
+	margin-left: 3px;
+}
+
+.yorum .yorumic a.active{
+	color: #1B9CFC;
+}
+
+.yorum .yorumic a.active:hover{
+	color: #1B9CFC;
+}
+
+.modal{
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.8);
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 10;
+	display: none;
+}
+
+.modal .modalic{
+	width: 500px;
+	background-color: #fff;
+	margin: 0 auto;
+	margin-top: 15vh;
+	border-radius: 3px;
+	border-top-right-radius: 15px;
+	border-top-left-radius: 15px;
+}
+
+.modal .modalic .modalust{
+	height: 20px;
+	line-height: 20px;
+	padding: 20px;
+	background-color: #4a69bd;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+}
+
+.modal .modalic .modalust h3{
+	font-weight: 500;
+	font-size: 17px;
+	color: #fff;
+	display: inline-block;
+}
+
+.modal .modalic .modalust a.kapat{
+	float: right;
+	font-size: 16px;
+	cursor: pointer;
+	color: #fff;
+}
+
+.modal .modalicerik{
+	padding: 20px;
+}
+
+.modal .modalicerik textarea{
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-radius: 6px;
+	display: block;
+	width: calc(100% - 20px);
+	max-width: 100%;
+	height: 100px;
+	margin-top: 20px;
+	padding: 10px;
+}
+
+.modal .butonlar{
+	margin-top: 15px;
+}
+
+.modal button{
+	display: inline-block;
+	padding: 8px 15px;
+	background-color: #fff;
+	border: 1px solid #111;
+	border-radius: 3px;
+	margin-right: 5px;
+	cursor: pointer;
+}
+
+.modal button.temizle{
+	background-color: #f1f2f6;
+	border-color: #ccc;
+	color: #333; 
+}
+
+.modal button.gonder{
+	background-color: #4a69bd;
+	border-color: #3742fa;
+	color: #fff;
+}
+
+.hesabim{
+	display: none;
+	width: auto;
+	min-width: 160px;
+	background-color: #fff;
+	position: absolute;
+	border-radius: 3px;
+	border: 1px solid #ccc;
+	margin-top: 8px;
+	right: 0;
+	text-align: left;
+	border-top: 2px solid #eb2f06;
+}
+
+.hesabim a{
+	display: block;
+	border-bottom: 1px solid #ddd;
+	padding: 12px 15px;
+}
+
+.hesabim a:hover{
+	background-color: #f9f9f9;
+	color: #000;
+}
+
+.hesabim a:last-child{
+	border: none;
+}
+
+ul.abonelikler{
+	margin-top: 5px;
+}
+
+ul.abonelikler li a img{
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	border-radius: 12px;
+	margin-right: 10px;
+}
+
+ul.abonelikler li a{
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+
+ul.abonelikler li a span{
+	display: inline-block;
+	margin-top: 5px;
+	position: absolute;
+	height: 13px;
+	line-height: 13px;
+	overflow: hidden;
+}
+
+.kutu{
+	background-color: #fff;
+	padding: 20px;
+	border: 1px solid #ddd;
+	border-radius: 1px;
+}
+
+.kutu .grup{
+	margin: 10px 0px 20px;
+}
+
+.kutu .hata{
+	background-color: #ee5253;
+	color: #fff;
+	border: 1px solid #c23616;
+	padding: 12px 10px;
+	border-radius: 3px;
+	margin-bottom: 20px;
+}
+
+.kutu .basari{
+	background-color: #05c46b;
+	color: #fff;
+	border: 1px solid #20bf6b;
+	padding: 12px 10px;
+	border-radius: 3px;
+	margin-bottom: 20px;
+}
+
+.kutu .basari a{
+	text-decoration: underline;
+	color: #fff;
+	border: none;
+}
+
+.kutu .hata i{
+	margin: 0px 8px 0px 5px;
+}
+
+.kutu .basari i{
+	margin: 0px 8px 0px 5px;
+}
+
+.kutu .hata i.fa-times{
+	float:right;
+	cursor: pointer;
+}
+
+.grup label{
+	font-weight: 500;
+	display: block;
+	font-size: 13px;
+	color: #222;
+	margin-bottom: 8px;
+	margin-left: 3px;
+}
+
+.grup label span{
+	color: #666;
+	font-weight: 400;
+	font-size: 12px;
+}
+
+.grup input[type='text'], .grup textarea, .grup input[type='password'], .grup input[type='email']{
+	width: calc(100% - 20px);
+	max-width: calc(100% - 20px);
+	min-width: calc(100% - 20px);
+	padding: 9px 10px;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+}
+
+.grup textarea{
+	min-height:	 50px;
+}
+
+.grup select{
+	width: calc(100%);
+	padding: 9px 10px;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+}
+
+.grup input[type='file']{
+	margin-top: 5px;
+	margin-left: 3px;
+}
+
+.grup button{
+	margin-left: 3px;
+	padding: 10px 0px;
+	display: block;
+	width: 100%;
+	border: 1px solid #1289A7;
+	border-radius: 3px;
+	color: #fff;
+	background-color: #0097e6;
+	cursor: pointer;
+	font-size: 14px;
+}
+
+.kutu .kutubaslik{
+	font-size: 17px;
+	font-weight: 500;
+	border-left: 5px solid #c23616;
+	padding-left: 10px;
+	margin-bottom: 25px;
+}
+
+.grup{
+	display: inline-block;
+	width: 100%;
+}
+
+.grupsol{
+	display: inline-block;
+	width: 49%;
+	float: left;
+}
+
+.grupsag{
+	display: inline-block;
+	width: 49%;
+	float: right;
+}
+
+.grupresimli{
+	overflow: auto;
+}
+
+.grupresimli .grupresim{
+	float: left;
+}
+
+.grupresimli .grupresim img{
+	display: block;
+	width: 50px;
+	height: 50px;
+	margin-left: 5px;
+}
+
+.grupresimli .grupicerik{
+	margin-left: 70px;
+}
+
+.kanalust{
+	padding: 5px 10px 0px;
+}
+
+.kanalust .kanalresim{
+	float: left;
+}
+
+.kanalust .kanalresim img{
+	display: block;
+	width: 64px;
+	height: 64px;
+	border-radius: 32px;
+}
+
+.kanalust .kanalbilgi{
+	margin-left: 20px;
+	float: left;
+}
+
+.kanalust .kanalbilgi h1{
+	color: #111;
+	font-size: 17px;
+	font-weight: 500;
+	padding: 0;
+	margin: 0;
+	margin-top: 12px;
+}
+
+.kanalust .kanalbilgi .abonesayisi{
+	color: #666;
+	font-size: 14px;
+}
+
+.kanalust .aboneol{
+	float: right; 
+}
+
+.kanalust .aboneol a{
+	text-transform: uppercase;
+	font-weight: 500;
+	text-overflow: none;
+    border-radius: 2px;
+    padding: 10px 20px;
+    margin-top: 15px;
+    display: block;
+}
+
+.kanalust .aboneol a.aboneolbuton{
+	
+	background-color: rgb(194, 54, 22);
+    color: rgb(255, 255, 255);
+    border-color: rgb(194, 54, 22);
+}
+
+.kanalust .aboneol a.aboneolundubuton{
+	background-color: #ddd;
+    color: #6f6f6f;
+    border-color: #ddd;
+}
+
+.tabbaslik{
+	margin-top: 20px;
+}
+
+.tabbaslik ul{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+.tabbaslik ul li{
+	display: inline-block;
+	font-weight: 400;
+}
+
+.tabbaslik ul li a{
+	padding: 10px 20px;
+	color: #6f6f6f;
+	text-transform: uppercase;
+	border:none;
+	text-decoration: none;
+	display: block;
+}
+
+.tabbaslik ul li:hover a{
+	color: #111;
+	border: none;
+}
+
+.tabbaslik ul li.active a{
+	color: #000;
+	font-weight: 500;
+	border-bottom: 2px solid #333;
+}
+
