@@ -111,6 +111,78 @@
 					<p class="kanal"><a href="#" title="#">Netflix <i class="fa fa-check-circle-o"></i></a></p>
 				</div><!--video-->	
 
+				<div class="video">
+					<div class="onizleme"><i class="fa fa-play-circle"></i></div>
+					<a href="#" title="#"><img src="assets/img/video/10.jpg"></a>
+					<div class="baslik">
+						<a href="#" title="#">Sıfır Bir "Bir Zamanlar Adana'da" 4. Sezon 10. Bölüm Fragmanı</a>
+					</div>
+					<p class="kanal"><a href="#" title="#">Sıfırbir Dizi</a></p>
+				</div><!--video-->
+
+				<div class="video">
+					<div class="onizleme"><i class="fa fa-play-circle"></i></div>
+					<a href="#" title="#"><img src="assets/img/video/11.jpg"></a>
+					<div class="baslik">
+						<a href="#" title="#">Turan Şahin - Ya Ben Anlatamadum (Official Video)</a>
+					</div>
+					<p class="kanal"><a href="#" title="#">Cinan Müzik</a></p>
+				</div><!--video-->
+
+				<div class="video">
+					<div class="onizleme"><i class="fa fa-play-circle"></i></div>
+					<a href="#" title="#"><img src="assets/img/video/12.jpg"></a>
+					<div class="baslik">
+						<a href="#" title="#">Lucifer 1.Sezon Fragmanı (Türkçe Altyazılı)</a>
+					</div>
+					<p class="kanal"><a href="#" title="#">Netflix <i class="fa fa-check-circle-o"></i></a></p>
+				</div><!--video-->	
+
+				<div class="video">
+					<div class="onizleme"><i class="fa fa-play-circle"></i></div>
+					<a href="#" title="#"><img src="assets/img/video/10.jpg"></a>
+					<div class="baslik">
+						<a href="#" title="#">Sıfır Bir "Bir Zamanlar Adana'da" 4. Sezon 10. Bölüm Fragmanı</a>
+					</div>
+					<p class="kanal"><a href="#" title="#">Sıfırbir Dizi</a></p>
+				</div><!--video-->
+
+				<div class="video">
+					<div class="onizleme"><i class="fa fa-play-circle"></i></div>
+					<a href="#" title="#"><img src="assets/img/video/11.jpg"></a>
+					<div class="baslik">
+						<a href="#" title="#">Turan Şahin - Ya Ben Anlatamadum (Official Video)</a>
+					</div>
+					<p class="kanal"><a href="#" title="#">Cinan Müzik</a></p>
+				</div><!--video-->
+
+				<div class="video">
+					<div class="onizleme"><i class="fa fa-play-circle"></i></div>
+					<a href="#" title="#"><img src="assets/img/video/12.jpg"></a>
+					<div class="baslik">
+						<a href="#" title="#">Lucifer 1.Sezon Fragmanı (Türkçe Altyazılı)</a>
+					</div>
+					<p class="kanal"><a href="#" title="#">Netflix <i class="fa fa-check-circle-o"></i></a></p>
+				</div><!--video-->	
+				
+				<div class="video">
+					<div class="onizleme"><i class="fa fa-play-circle"></i></div>
+					<a href="#" title="#"><img src="assets/img/video/10.jpg"></a>
+					<div class="baslik">
+						<a href="#" title="#">Sıfır Bir "Bir Zamanlar Adana'da" 4. Sezon 10. Bölüm Fragmanı</a>
+					</div>
+					<p class="kanal"><a href="#" title="#">Sıfırbir Dizi</a></p>
+				</div><!--video-->
+
+				<div class="video">
+					<div class="onizleme"><i class="fa fa-play-circle"></i></div>
+					<a href="#" title="#"><img src="assets/img/video/11.jpg"></a>
+					<div class="baslik">
+						<a href="#" title="#">Turan Şahin - Ya Ben Anlatamadum (Official Video)</a>
+					</div>
+					<p class="kanal"><a href="#" title="#">Cinan Müzik</a></p>
+				</div><!--video-->	
+
 			</div><!--siteic-->
 		</div><!--site-->
 	</div><!--container-->

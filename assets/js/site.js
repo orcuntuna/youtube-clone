@@ -77,6 +77,16 @@ $(function(){
 		$(this).parent().remove();
 	});
 
+	$("#tabbaslik li:first").addClass("active");
+	$("#tabicerik div.tab:first").addClass("active");
+
+	$("#tabbaslik li").click(function(){
+		$("#tabbaslik li").removeClass("active");
+		$(this).addClass("active");
+		$("#tabicerik div.tab").removeClass("active");
+		$("#tabicerik div.tab").eq($(this).index()).addClass("active");
+	});
+
 });
 
 function videoya_yorum(video_id, video_baslik){

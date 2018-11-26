@@ -11,7 +11,7 @@ if(!isset($_url[0])){
 }
 
 if(!file_exists('app/controller/'. $_url[0] . '.php')){
-	$_url[0] = 'index';
+	redirect();
 }
 
 require 'app/controller/'. $_url[0] . '.php';
