@@ -1,5 +1,4 @@
 # youtube
-Youtube Clone
 
 Yapılması gereken php.ini ayarları:
 
