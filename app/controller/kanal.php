@@ -6,6 +6,11 @@ if($uyelik){
 }
 
 $kanal_id = intval(get('id'));
+
+if(empty($_url[1])){
+	redirect("kanal/v/?id=".$kanal_id);
+}
+
 if(intval($kanal_id)>0){
 	$kn = $db->query("SELECT * FROM uyeler WHERE id = {$kanal_id}")->fetch(PDO::FETCH_ASSOC);
 	if(!$kn){

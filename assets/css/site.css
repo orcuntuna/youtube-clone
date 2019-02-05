@@ -988,9 +988,8 @@ ul.abonelikler li a{
 ul.abonelikler li a span{
 	display: inline-block;
 	margin-top: 5px;
-	position: absolute;
-	height: 13px;
-	line-height: 13px;
+	height: 24px;
+	line-height: 24px;
 	overflow: hidden;
 }
 
@@ -1261,7 +1260,6 @@ ul.abonelikler li a span{
 }
 
 .kanalvideo{
-	height: 105px;
 	border: none;
 	margin-bottom: 20px;
 	position: relative;
@@ -1278,21 +1276,25 @@ ul.abonelikler li a span{
 
 .kanalvideo .img img{
 	display: block;
-	width: 190px;
-	height: 105px;
+	width: 152px;
+	height: 84px;
 	border-radius: 2px;
 } 
 
 .kanalvideo .baslik{
-	margin: 5px 0px 12px 210px;
+	margin: 5px 0px 12px 175px;
 }
 
 .kanalvideo .baslik a{
 	color: #333;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 	text-decoration: none;
 	font-size: 17px;
 	font-weight: 500;
 	border: none;
+	line-height: 18px;
 	margin-bottom: 10px;
 	display: block;
 }
@@ -1301,7 +1303,7 @@ ul.abonelikler li a span{
 	font-size: 13px;
 	color: #666;
 	padding: 0;
-	margin: 5px 0px 5px 210px;
+	margin: 5px 0px 5px 175px;
 	line-height: 19px;
 }
 
@@ -1313,8 +1315,17 @@ ul.abonelikler li a span{
 .kanalvideo span.yeni{
 	margin-left: 5px;
 	border-radius: 3px;
-	background-color: #666;
+	background-color: rgb(194, 54, 22);
 	color: #fff;
 	font-size: 11px;
 	padding: 2px 5px;
+}
+
+#tabHakkinda .kanalaciklama{
+	line-height: 22px;
+}
+
+#tabHakkinda .kanalhakkindabaslik{
+	font-weight: bold;
+	margin-bottom: 5px;
 }

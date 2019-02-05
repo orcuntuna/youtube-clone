@@ -47,7 +47,7 @@
 
 							<div class="grup">
 								<label>Kanal Açıklaması</label>
-								<textarea rows="5" name="aciklama"><?php echo str_replace(array('<br>','<br/>'), "\n", $uye['aciklama']); ?></textarea>
+								<textarea rows="5" name="aciklama"><?php echo stripslashes(str_replace(array('<br>','<br/>'), "\n", $uye['aciklama'])); ?></textarea>
 							</div>
 
 							<div class="grup grupsol">

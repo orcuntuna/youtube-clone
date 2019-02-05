@@ -76,7 +76,7 @@ $(function(){
 		$(this).parent().slideUp();
 		$(this).parent().remove();
 	});
-
+	/*
 	$("#tabbaslik li:first").addClass("active");
 	$("#tabicerik div.tab:first").addClass("active");
 
@@ -85,6 +85,51 @@ $(function(){
 		$(this).addClass("active");
 		$("#tabicerik div.tab").removeClass("active");
 		$("#tabicerik div.tab").eq($(this).index()).addClass("active");
+	});
+	*/
+
+	$("#videolarSiralamaSelect").change(function(){
+		var kanal_id = $("#videolarSiralamaSelect").attr("kanal_id");
+		var siralama = $("#videolarSiralamaSelect").val();
+		window.location = site_url + "kanal/v/?id=" + kanal_id + "&s=" + siralama;
+	});
+
+	$("#populerSiralamaSelect").change(function(){
+		var kanal_id = $("#populerSiralamaSelect").attr("kanal_id");
+		var siralama = $("#populerSiralamaSelect").val();
+		window.location = site_url + "kanal/p/?id=" + kanal_id + "&s=" + siralama;
+	});
+
+	$("#kanal_abone_ol").click(function(){
+		var kanal_id = $(this).attr("kanal_id");
+		$.ajax({
+			type: 'POST',
+			data: { type: 'abonelik', kanal_id:kanal_id },
+			url: ajax_url,
+			success: function(cevap){
+				if(cevap == 1){
+					location.reload();
+				}else{
+					alert("Bir sorun oluştu");
+				}
+			}
+		});
+	});
+
+	$("#kanal_abonelikten_cik").click(function(){
+		var kanal_id = $(this).attr("kanal_id");
+		$.ajax({
+			type: 'POST',
+			data: { type: 'abonelik', kanal_id:kanal_id },
+			url: ajax_url,
+			success: function(cevap){
+				if(cevap == 2){
+					location.reload();
+				}else{
+					alert("Bir sorun oluştu");
+				}
+			}
+		});
 	});
 
 });

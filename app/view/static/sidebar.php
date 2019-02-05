@@ -36,8 +36,8 @@
 			if($abonelikler->rowCount()){
 				echo '<ul class="abonelikler">';
 				foreach ($abonelikler as $kanalbilgi) {
-					$kanal_id = $kanalbilgi['olunan'];
-					$kanal = $db->query("SELECT * FROM uyeler WHERE id = {$kanal_id}")->fetch(PDO::FETCH_ASSOC);
+					$abone_olunan_kanal_id = $kanalbilgi['olunan'];
+					$kanal = $db->query("SELECT * FROM uyeler WHERE id = {$abone_olunan_kanal_id}")->fetch(PDO::FETCH_ASSOC);
 					if($kanal){
 						echo '<li><a href="'.kanal_url($kanal['id']).'" title="'.$kanal['kanal'].'"><img src="'.kanal_img($kanal['id']).'"><span>'.$kanal['kanal'].'</span></a></li>';
 					}

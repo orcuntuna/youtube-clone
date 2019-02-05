@@ -24,6 +24,8 @@ if($_POST){
 		$aciklama = "";
 	}
 
+	$aciklama = addslashes($aciklama);
+
 	if(!empty($isim) && !empty($kanal)){
 
 		if(!empty($sifre) && !empty($sifre2)){

@@ -34,7 +34,7 @@ if($_POST){
 			}
 
 		}else{
-			die('Lütfen tüm alanları doldurun');
+			die('Lütfen tüm alanları doldurun xx');
 		}
 
 	}
@@ -100,6 +100,40 @@ if($_POST){
 
 	}
 
+	// abone ol & abonelikten çık
+
+	if(post('type') == 'abonelik'){
+
+		/*
+			0: hata
+			1: abone olundu
+			2: abonelikten çıkıldı
+		*/
+
+		$ben = intval($_SESSION["uye_id"]);
+		$sen = intval(post("kanal_id"));
+
+		$abonelik_kontrol = $db->query("SELECT * FROM abone WHERE olan = {$ben} AND olunan = {$sen}")->fetch(PDO::FETCH_ASSOC);
+		if($abonelik_kontrol){
+			// abonelikten çıkıyoruz
+			$mevcut_abonelik_id = $abonelik_kontrol["id"];
+			$abonelikten_cik = $db->exec("DELETE FROM abone WHERE id = {$mevcut_abonelik_id}");
+			if($abonelikten_cik){
+				echo 2;
+			}else{
+				echo 0;
+			}
+		}else{
+			// abone oluyoruz
+			$abone_ol = $db->prepare("INSERT INTO abone (olan,olunan) VALUES (?,?)")->execute(array($ben,$sen));
+			if($abone_ol){
+				echo 1;
+			}else{
+				echo 0;
+			}
+		}
+
+	}
 
 }else{
 	die("Erişim reddedildi!");
