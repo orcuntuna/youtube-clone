@@ -18,6 +18,15 @@ function assets_url($extra = null){
 	}
 }
 
+// assets url döndüren fonksiyon
+function upload_url($extra = null){
+	if($extra){
+		return BASE_URL . "upload/" . trim(trim($extra),'/');
+	}else{
+		return BASE_URL . "upload/";
+	}
+}
+
 // yönlendirme
 function redirect($param = null){
 	if(!$param){

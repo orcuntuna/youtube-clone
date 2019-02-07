@@ -131,17 +131,17 @@ hr {
 
 .sidebar{
 	float: left;
-	width: 300px;
-	display: block;
-	margin-top: 90px;
-	border-radius: 3px;
-	padding: 12px 0px 20px 0px;
-	position: fixed;
-	height: calc(100% - 165px);
-	max-height: calc(100% - 165px);
+    width: 280px;
+    display: block;
+    margin-top: 90px;
+    border-radius: 3px;
+    padding: 12px 0px 20px 0px;
+    position: fixed;
+    height: calc(100% - 140px);
+    max-height: calc(100% - 140px);
 	overflow: hidden;
-	background-color: #fff;
 	border : 1px solid #ddd;
+	background-color: #fff;
 }
 
 .sidebaric{
@@ -555,9 +555,14 @@ input.textbox{
 
 .sidebarvideo{
 	position: static;
+	border: none;
+	background: none;
+	width: 300px;
 }
 
 .sitevideo{
+	margin-left: 300px;
+	width: calc(100% - 300px);
 	float: left;
 	margin-left: 0px;
 }

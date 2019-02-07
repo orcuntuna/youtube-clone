@@ -21,16 +21,18 @@
 									<!--<a href="#!" class="aboneolundubuton">Abone Olundu</a>-->
 									<?php
 
-									if($kn['id'] == $uye['id']){
-										echo '<a href="'.base_url("hesabim").'" class="aboneolundubuton">Kanalı Düzenle</a>';
-									}else{
-										$abone_olan_id = $_SESSION["uye_id"];
-										$abone_olunan_id = $kanal_id;
-										$abonelik_kontrol = $db->query("SELECT * FROM abone WHERE olan = {$abone_olan_id} AND olunan = {$abone_olunan_id}")->fetch(PDO::FETCH_ASSOC);
-										if($abonelik_kontrol){
-											echo '<a href="javascript:void(0)" class="aboneolundubuton" id="kanal_abonelikten_cik" kanal_id="'.$abone_olunan_id.'">Abonelikten Çık</a>';
+									if(isset($uye)){
+										if($kn['id'] == $uye['id']){
+											echo '<a href="'.base_url("hesabim").'" class="aboneolundubuton">Kanalı Düzenle</a>';
 										}else{
-											echo '<a href="javascript:void(0)" class="aboneolbuton" id="kanal_abone_ol" kanal_id="'.$abone_olunan_id.'">Abone Ol <i class="fa fa-bell"></i></a>';
+											$abone_olan_id = $_SESSION["uye_id"];
+											$abone_olunan_id = $kanal_id;
+											$abonelik_kontrol = $db->query("SELECT * FROM abone WHERE olan = {$abone_olan_id} AND olunan = {$abone_olunan_id}")->fetch(PDO::FETCH_ASSOC);
+											if($abonelik_kontrol){
+												echo '<a href="javascript:void(0)" class="aboneolundubuton" id="kanal_abonelikten_cik" kanal_id="'.$abone_olunan_id.'">Abonelikten Çık</a>';
+											}else{
+												echo '<a href="javascript:void(0)" class="aboneolbuton" id="kanal_abone_ol" kanal_id="'.$abone_olunan_id.'">Abone Ol <i class="fa fa-bell"></i></a>';
+											}
 										}
 									}
 

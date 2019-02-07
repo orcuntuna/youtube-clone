@@ -1,6 +1,6 @@
 $(function(){
 
-	if($("#player").lenght){
+	if($("body").has("#player")){
 		const player = new Plyr('#player');
 	}
 
