@@ -4,6 +4,14 @@ $(function(){
 		const player = new Plyr('#player');
 	}
 
+	if($("body").has(".devaminigor")){
+		if($(".videoaciklama .metin").height() > 40){
+			$(".videoaciklama .metin").css("max-height","40px");
+		}else{
+			$(".devaminigor a").hide();
+		}
+	}
+
 	var devamiacikmi = 0;
 	$(".devaminigor a").click(function(){
 		if(devamiacikmi == 0){
@@ -132,6 +140,12 @@ $(function(){
 		});
 	});
 
+	$("#begenenler").click(function(){
+		$("#modal_begenenler").show();
+		$("#modal_begenenler .modalic").hide();
+		$("#modal_begenenler .modalic").fadeIn(500);
+	});
+
 });
 
 function videoya_yorum(video_id, video_baslik){
@@ -148,4 +162,48 @@ function hesabim(){
 	}else{
 		$(".ustmenu .giris a.hesabimbuton").css({'background-color':'#fff', 'color':'#333', 'border-color':'#afadad'});
 	}
+}
+
+function begeni(video_id,islem){
+	var like_ikon = '<i class="fa fa-thumbs-up"></i> ';
+	var dislike_ikon = '<i class="fa fa-thumbs-down"></i> ';
+	$.ajax({
+		type: 'POST',
+		url: ajax_url,
+		data: { type: 'begeni', video_id:video_id, islem:islem },
+		success: function(cevap){
+			if(begeni_suan == 1 && cevap == 0){
+				begeni_like--;
+				$(".begenibilgi .like").removeClass("likeactive");
+				$(".begenibilgi .like").html(like_ikon + begeni_like);
+			}else if(begeni_suan == 2 && cevap == 0){
+				begeni_dislike--;
+				$(".begenibilgi .dislike").removeClass("dislikeactive");
+				$(".begenibilgi .dislike").html(dislike_ikon + begeni_dislike);
+			}else if(begeni_suan == 1 && cevap == 2){
+				begeni_dislike++;
+				begeni_like--;
+				$(".begenibilgi .like").removeClass("likeactive");
+				$(".begenibilgi .dislike").addClass("dislikeactive");
+				$(".begenibilgi .dislike").html(dislike_ikon + begeni_dislike);
+				$(".begenibilgi .like").html(like_ikon + begeni_like);
+			}else if(begeni_suan == 2 && cevap == 1){
+				begeni_like++;
+				begeni_dislike--;
+				$(".begenibilgi .like").addClass("likeactive");
+				$(".begenibilgi .dislike").removeClass("dislikeactive");
+				$(".begenibilgi .dislike").html(dislike_ikon + begeni_dislike);
+				$(".begenibilgi .like").html(like_ikon +begeni_like);
+			}else if(begeni_suan == 0 && cevap == 1){
+				begeni_like++;
+				$(".begenibilgi .like").addClass("likeactive");
+				$(".begenibilgi .like").html(like_ikon + begeni_like);
+			}else if(begeni_suan == 0 && cevap == 2){
+				begeni_dislike++;
+				$(".begenibilgi .dislike").addClass("dislikeactive");
+				$(".begenibilgi .dislike").html(dislike_ikon + begeni_dislike);
+			}
+			begeni_suan = cevap;
+		}
+	})
 }

@@ -6,7 +6,7 @@ if($_POST){
 	if(post('type') == 'giris'){
 
 		$eposta = post('eposta');
-		$sifre = post('sifre');
+		$sifre = md5(post('sifre'));
 		$benihatirla = post('benihatirla');
 
 		if(!empty($eposta) && !empty($sifre)){
@@ -61,7 +61,7 @@ if($_POST){
 						$kontrol = $db->query("SELECT * FROM uyeler WHERE eposta = '{$eposta}'")->fetch(PDO::FETCH_ASSOC);
 						if(!$kontrol){
 
-							$ekle = $db->prepare("INSERT INTO uyeler SET isim = ?, eposta = ?, kanal = ?, sifre = ?")->execute(array($isim,$eposta,$kanal,$sifre));
+							$ekle = $db->prepare("INSERT INTO uyeler SET isim = ?, eposta = ?, kanal = ?, sifre = ?")->execute(array($isim,$eposta,$kanal,md5($sifre)));
 							if($ekle){
 
 								$uye_id = $db->lastInsertId();
@@ -131,6 +131,50 @@ if($_POST){
 			}else{
 				echo 0;
 			}
+		}
+
+	}
+
+
+	// like & dislike
+
+	if(post('type') == 'begeni'){
+
+		$video_id = post("video_id");
+		$uye_id = $_SESSION["uye_id"];
+		$islem = post("islem");
+
+		$video_kontrol = $db->query("SELECT * FROM video WHERE id = {$video_id}")->fetch(PDO::FETCH_ASSOC);
+		if($video_kontrol){
+			$suan = ben_begendim_mi($video_id);
+			if($suan == 1 && $islem == 1){
+				// like sil
+				$like_sil = $db->exec("DELETE FROM begeni WHERE video_id = {$video_id} AND uye_id = {$uye_id}");
+				echo 0;
+			}elseif($suan == 1 && $islem == 2){
+				// like sil + dislike ekle
+				$like_sil = $db->exec("DELETE FROM begeni WHERE video_id = {$video_id} AND uye_id = {$uye_id}");
+				$dislike_ekle = $db->prepare("INSERT INTO begeni (video_id,uye_id,islem) VALUES (?,?,?)")->execute(array($video_id,$uye_id,2));
+				echo 2;
+			}elseif($suan == 2 && $islem == 2){
+				// dislike sil
+				$dislike_sil = $db->exec("DELETE FROM begeni WHERE video_id = {$video_id} AND uye_id = {$uye_id}");
+				echo 0;
+			}elseif($suan == 2 &&  $islem == 1){
+				// dislike sil + like ekle
+				$dislike_sil = $db->exec("DELETE FROM begeni WHERE video_id = {$video_id} AND uye_id = {$uye_id}");
+				$like_ekle = $db->prepare("INSERT INTO begeni (video_id,uye_id,islem) VALUES (?,?,?)")->execute(array($video_id,$uye_id,1));
+				echo 1;
+			}elseif($suan == 0 &&  $islem == 2){
+				// dislike ekle
+				$dislike_ekle = $db->prepare("INSERT INTO begeni (video_id,uye_id,islem) VALUES (?,?,?)")->execute(array($video_id,$uye_id,2));
+				echo 2;
+			}elseif($suan == 0 &&  $islem == 1){
+				$like_ekle = $db->prepare("INSERT INTO begeni (video_id,uye_id,islem) VALUES (?,?,?)")->execute(array($video_id,$uye_id,1));
+				echo 1;
+			}
+		}else{
+			echo 0;
 		}
 
 	}

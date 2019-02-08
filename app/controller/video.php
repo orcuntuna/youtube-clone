@@ -22,6 +22,10 @@ if(intval($video_id)>0){
 	die();
 }
 
+if(video_izlenme_arttir($video_id)){
+	$vd["izlenme"]++;
+}
+
 include view('static/header');
 include view('video');
 include view('static/footer');

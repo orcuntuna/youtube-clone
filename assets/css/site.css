@@ -88,6 +88,10 @@ hr {
 	font-weight: 400;
 }
 
+.ustmenu .ara input[type="text"]:focus{
+	outline: 0;
+}
+
 .ustmenu .ara button.submit{
 	background-color: #fafafa;
 	border-top-right-radius: 4px;
@@ -99,6 +103,10 @@ hr {
 	border: 1px solid #ddd;
 	border-left: none;
 	cursor: pointer;
+}
+
+.ustmenu .ara button.submit:focus{
+	outline: 0;
 }
 
 .ustmenu .giris{
@@ -137,11 +145,11 @@ hr {
     border-radius: 3px;
     padding: 12px 0px 20px 0px;
     position: fixed;
-    height: calc(100% - 140px);
-    max-height: calc(100% - 140px);
-	overflow: hidden;
-	border : 1px solid #ddd;
-	background-color: #fff;
+    height: calc(100% - 150px);
+    max-height: calc(100% - 150px);
+		overflow: hidden;
+		border : 1px solid #ddd;
+		background-color: #fff;
 }
 
 .sidebaric{
@@ -657,7 +665,6 @@ input.textbox{
 
 .videobilgi .begenibilgi{
 	float: right;
-	display: inline-block;
 }
 
 .videobilgi .begenibilgi a{
@@ -671,6 +678,7 @@ input.textbox{
 	color : #555;
 	margin-left: 5px;
 	font-size: 13px;
+	border-radius: 2px;
 }
 
 .videobilgi .begenibilgi a i{
@@ -678,16 +686,48 @@ input.textbox{
 	margin-right: 5px;
 }
 
-.videobilgi .begenibilgi a.like:hover{
+.videobilgi .begenibilgi .begenenler i{
+	margin: 0;
+}
+
+.videobilgi .begenibilgi a.like{
 	border-color: #218c74;
 	border-style: solid;
 	color: #218c74;
 }
 
-.videobilgi .begenibilgi a.dislike:hover{
+.videobilgi .begenibilgi a.likeactive{
+	border-color: #218c74;
+	border-style: solid;
+	background: #218c74;
+	color: #fff;
+}
+
+.videobilgi .begenibilgi a.like:hover{
+	border-color: #218c74;
+	border-style: solid;
+	background: #218c74;
+	color: #fff;
+}
+
+.videobilgi .begenibilgi a.dislike{
 	border-color: #b33939;
 	border-style: solid;
 	color: #b33939;
+}
+
+.videobilgi .begenibilgi a.dislike:hover{
+	border-color: #b33939;
+	border-style: solid;
+	color: #fff;
+	background: #b33939;
+}
+
+.videobilgi .begenibilgi a.dislikeactive{
+	border-color: #b33939;
+	border-style: solid;
+	color: #fff;
+	background: #b33939;
 }
 
 .videobilgi .begenibilgi a.aktif{
@@ -736,7 +776,6 @@ input.textbox{
 	font-size: 13px;
 	font-weight: 400;
 	letter-spacing: 0px;
-	max-height: 40px;
 	overflow: hidden;
 }
 
@@ -912,10 +951,18 @@ input.textbox{
 	border-radius: 6px;
 	display: block;
 	width: calc(100% - 20px);
-	max-width: 100%;
+	max-width: calc(100% - 20px);
+	min-width: calc(100% - 20px);
 	height: 100px;
+	max-height: 300px;
+	min-height: 80px;
 	margin-top: 20px;
 	padding: 10px;
+}
+
+.modal .modalicerik textarea:focus{
+	box-shadow: none;
+	outline: 0;
 }
 
 .modal .butonlar{
@@ -1179,6 +1226,12 @@ ul.abonelikler li a span{
 	font-size: 14px;
 }
 
+.kanalust .kanalbilgi .fa{
+	color: #0097e6;
+	margin-left: 2px;
+	font-size: 15px;
+}
+
 .kanalust .aboneol{
 	float: right; 
 }
@@ -1333,4 +1386,50 @@ ul.abonelikler li a span{
 #tabHakkinda .kanalhakkindabaslik{
 	font-weight: bold;
 	margin-bottom: 5px;
+}
+
+.modal .begenenler-liste{
+	max-height: 400px;
+	padding: 5px 0;
+	overflow: auto;
+}
+
+.modal .begenenler-liste .begenen{
+	height: 24px;
+	margin-bottom: 14px;
+}
+
+.modal .begenenler-liste .begenen img{
+	height: 24px;
+	width: 24px;
+	display: block;
+	border-radius: 12px;
+}
+
+.modal .begenenler-liste .begenen a.kanalresim{
+	float: left;
+}
+
+.modal .begenenler-liste .begenen a.kanalisim{
+	float:left;
+	line-height: 24px;
+	height: 24px;
+	margin-left: 12px;
+	font-weight: 500;
+	color: #333;
+}
+
+.modal .begenenler-liste .begenen .islem{
+	float:right;
+	line-height: 24px;
+	height: 24px;
+	font-size: 18px;
+}
+
+.modal .begenenler-liste .begenen .islem .yesil{
+	color: #218c74;
+}
+
+.modal .begenenler-liste .begenen .islem .kirmizi{
+	color: #b33939;
 }

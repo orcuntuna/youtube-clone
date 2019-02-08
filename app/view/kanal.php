@@ -13,7 +13,7 @@
 									<img src="<?php echo kanal_img($kn['id']); ?>">
 								</div>
 								<div class="kanalbilgi">
-									<h1><?php echo $kn['kanal']; ?></h1>
+									<h1><?php echo $kn['kanal']; ?> <?php if($kn["dogrulanmis"] == 1){echo '<i title="Doğrulanmış Kanal" class="fa fa-check-circle"></i>';} ?></h1>
 									<p class="abonesayisi"><?php echo kanal_abone_sayisi($kn['id']); ?> abone</p>
 								</div>
 								<div class="aboneol" id="kanal_abonelik_butonlar">

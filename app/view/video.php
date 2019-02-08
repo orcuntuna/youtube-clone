@@ -13,20 +13,28 @@
 						<h1><?php echo htmlspecialchars(strip_tags(trim($vd["baslik"]))); ?> <span><i class="fa fa-eye"></i> <b><?php echo intval($vd["izlenme"]); ?></b> görüntülenme </span></h1>
 					</div>
 
+					<?php $kanal = kanal_bilgileri($vd["kanal"]); ?>
+
 					<div class="videobilgi">
 						<div class="kanalbilgi">
-							<a href="#">
-								<img src="assets/img/kanal/netd.jpg">
+							<a href="<?php echo kanal_url($vd["kanal"]); ?>">
+								<img src="<?php echo upload_url("profil/".$kanal["resim"]); ?>">
 							</a>
 							<div class="kanalbilgitext">
-								<a href="#" class="kanalisim">netd müzik <i class="fa fa-check-circle"></i></a>
-								<span>07.10.2018 tarihinde eklendi</span>
+								<a href="<?php echo kanal_url($vd["kanal"]); ?>" class="kanalisim"><?php echo $kanal["kanal"]; ?> <?php if($kanal["dogrulanmis"] == 1){echo '<i title="Doğrulanmış Kanal" class="fa fa-check-circle"></i>';} ?></a>
+								<span><?php echo date("d.m.Y",$vd["tarih"]); ?> tarihinde eklendi</span>
 							</div>
 						</div><!--kanalbilgi-->
 						<div class="begenibilgi">
 							<!-- a aktif class alıyor -->
-							<a href="#" class="like"><i class="fa fa-thumbs-up"></i> 137</a>
-							<a href="#" class="dislike"><i class="fa fa-thumbs-down"></i> 24</a>
+							<script type="text/javascript">
+								var begeni_suan = <?php echo ben_begendim_mi($vd["id"]); ?>;
+								var begeni_like = <?php echo video_begeni_sayisi($vd["id"],"like"); ?>;
+								var begeni_dislike = <?php echo video_begeni_sayisi($vd["id"],"dislike"); ?>;
+							</script>
+							<a href="javascript:void(0)" class="begenenler" id="begenenler"><i class="fa fa-question"></i></a>
+							<a href="javascript:void(0)" onclick="begeni(<?php echo $vd['id']; ?>,1)" class="like <?php if(ben_begendim_mi($vd["id"]) == 1){echo 'likeactive';} ?>"><i class="fa fa-thumbs-up"></i> <?php echo video_begeni_sayisi($vd["id"],"like"); ?></a>
+							<a href="javascript:void(0)" onclick="begeni(<?php echo $vd['id']; ?>,2)" class="dislike <?php if(ben_begendim_mi($vd["id"]) == 2){echo 'dislikeactive';} ?>"><i class="fa fa-thumbs-down"></i> <?php echo video_begeni_sayisi($vd["id"],"dislike"); ?></a>
 						</div><!--begenibilgi-->
 					</div><!--videobilgi-->
 
@@ -34,28 +42,7 @@
 
 					<div class="videoaciklama">
 						<div class="metin">
-							Ece Seçkin'in, DGL & DMC etiketiyle yayınlanan "Dibine Dibine" isimli tekli çalışması, video klibiyle netd müzik'te.
-							<br>"Dibine Dibine" şarkı sözleri ile
-							<br><br>Sanki olmasan yaşayamam şu koca dünyada
-							<br>Sabrı bir şekilde veriyor emin ol bana allah
-							<br>	
-							<br>Bir alttan bir üstten giriyor
-							<br>Orda burada dolanıyor
-							<br>Gidiyor suyumdan bu ara
-							<br>Yine kafalar sanıyor
-							<br>Of of nasıl sıkıldım senin o dilinden
-							<br>
-							<br>Bundan sonra seyret sen görücen şimdi beni de
-							<br>Gezicem tozucam eğlenicem vurucam dibine dibine 
-							<br>Yatıcan kalkıcan merak edicen sorucan nereye
-							<br>Gidiyorum cehennemin ta dibine
-							<br>Gelcen mi?
-							<br>
-							<br>netd müzik, Facebook'ta, http://bit.ly/ndm-facebook
-							<br>aynı zamanda Twitter'da, http://bit.ly/ndm-twitter
-							<br>bir de Instagram'da! http://bit.ly/ndm-insta
-							<br>ve Spotify'da: http://spoti.fi/2GbWAEx
-							<br>peki YouTube kanalımıza abone oldunuz mu? http://bit.ly/2d8ihWS
+							<?php echo $vd["aciklama"]; ?>
 						</div>
 						<p class="devaminigor"><a href="javascript:void(0);">Devamını Göster</a></p>
 					</div>
@@ -251,6 +238,51 @@
 						<button type="submit" class="gonder">Gönder</button>
 					</div>
 				</form>
+			</div>
+		</div>
+	</div><!--modal-->
+
+	<div class="modal" id="modal_begenenler">
+		<div class="modalic">
+			<div class="modalust">
+				<h3>Beğenenler Listesi</h3>
+				<a class="kapat"><i class="fa fa-times"></i></a>
+			</div>
+			<div class="modalicerik">
+				<div class="begenenler-liste">
+				<?php
+
+				$vid = $vd["id"];
+				$begeni_liste = $db->query("SELECT * FROM begeni LEFT JOIN uyeler ON begeni.uye_id = uyeler.id WHERE video_id = {$vid} AND uyeler.id IS NOT NULL", PDO::FETCH_ASSOC);
+				if($begeni_liste->rowCount()){
+					foreach($begeni_liste as $begenen){
+						?>
+
+						<div class="begenen">
+							<a class="kanalresim" href="<?php echo kanal_url($begenen["uye_id"]); ?>">
+								<img src="<?php echo upload_url("profil/".$begenen["resim"]); ?>">
+							</a>
+							<a href="<?php echo kanal_url($begenen["uye_id"]); ?>" class="kanalisim"><?php echo $begenen["kanal"]; ?></a>
+							<div class="islem">
+								<?php
+									if($begenen["islem"] == 1){
+										echo '<i class="fa fa-thumbs-up yesil"></i>';
+									}elseif($begenen["islem"] == 2){
+										echo '<i class="fa fa-thumbs-down kirmizi"></i>';
+									}
+								?>
+							</div>
+						</div>
+
+						<?php
+					}
+				}else{
+					echo '<p>Bu videoyu henüz kimse beğenmedi.</p>';
+				}
+
+				
+				?>
+				</div>	
 			</div>
 		</div>
 	</div><!--modal-->
