@@ -9,9 +9,9 @@ define('BASE_DIR', dirname(dirname(__DIR__)).'/');
 
 // helperları dahil et
 foreach ($config['helpers'] as $helper) {
-	$helperPath = BASE_DIR . 'app/helper/'.$helper.'.php';
-	if(file_exists($helperPath)){
-		require_once $helperPath;
+	$helper_adres = BASE_DIR . 'app/helper/'.$helper.'.php';
+	if(file_exists($helper_adres)){
+		require_once $helper_adres;
 	}
 }
 

@@ -179,6 +179,17 @@ if($_POST){
 
 	}
 
+	// daha fazla video göster
+
+	if(post('type') == 'daha_fazla_goster'){
+
+		$sayfa = post("sayfa");
+		$baslangic = post("baslangic");
+		$adet = post("adet");
+		
+
+	}
+
 }else{
 	die("Erişim reddedildi!");
 }
