@@ -146,14 +146,50 @@ $(function(){
 		$("#modal_begenenler .modalic").fadeIn(500);
 	});
 
-});
+	$("#yorumyap button.paylas").click(function(){
+		if($("#yorumyap textarea").val().trim()){
+			var parent = $("#yorumyap input[name='parent']").val();
+			var etiket = $("#yorumyap input[name='etiket']").val();
+			var yorum = $("#yorumyap textarea").val();
+			var video_id = $("#yorumyap input[name='video']").val();
+			$.ajax({
+				type: 'POST',
+				url: ajax_url,
+				data: { type:'yeni_yorum', parent:parent, yorum:yorum, video_id:video_id, etiket:etiket },
+				success: function(cevap){
+					if(cevap == "ok"){
+						location.reload();
+					}else{
+						alert(cevap);
+					}
+				}
+			});
 
-function videoya_yorum(video_id, video_baslik){
-	$("#modal p.videobilgi").text(video_baslik + ' videosuna yorum yapıyorsunuz.');
-	$("#modal").show();
-	$("#modal .modalic").hide();
-	$("#modal .modalic").fadeIn(500);
-}
+		}else{
+			alert("lütfen yorum alanını doldurun");
+		}
+	});
+
+	$("#yorumyap button.temizle").click(function(){
+		$("#yorumyap textarea").val("");
+		$("#yorumyap input[name='parent']").val("0");
+		$("#yorumyap input[name='etiket']").val("0");
+		$("#yorumyap label span").text("");
+	});
+
+	$(".yorum .yorumyanitla").click(function(){
+		var yorum = $(this).attr("yorum");
+		var etiket = $(this).attr("etiket");
+		var kanal = $(this).attr("kanal");
+		$("#yorumyap label span").text(kanal + " kullanıcısına yanıt veriyorsunuz.");
+		$("#yorumyap input[name='parent']").val(yorum);
+		$("#yorumyap input[name='etiket']").val(etiket);
+		$("html, body").animate({
+	        scrollTop: $('#yorumyap').offset().top - 200
+	    }, 1000);
+	});
+
+});
 
 function hesabim(){
 	$(".hesabim").toggle();

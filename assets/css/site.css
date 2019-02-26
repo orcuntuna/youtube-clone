@@ -3,7 +3,7 @@
 */
 
 body{
-	background-color: #f9f9f9;
+	background-color: #fff;
 	font-family: 'Roboto', sans-serif;
 	font-size: 14px;
 	color: #333;
@@ -179,7 +179,7 @@ hr {
 }
 
 .sidebar ul li:hover{
-	background-color: #f2f2f2;
+	background-color: #f5f5f5;
 	transition: 0.1s;
 }
 
@@ -802,8 +802,8 @@ input.textbox{
 }
 
 .yorumlar h3{
-	margin-bottom: 20px;
-	font-size: 16px;
+	margin-bottom: 25px;
+	font-size: 19px;
 	color: #111;
 	font-weight: 500;
 }
@@ -843,10 +843,6 @@ input.textbox{
 	margin-bottom: 35px;
 }
 
-.yorumlar .yorum .yorumic{
-
-}
-
 .yorum .yorumic a.kanalisim{
 	margin-top: 5px;
 	margin-bottom: 10px;
@@ -878,10 +874,9 @@ input.textbox{
 	font-size: 14px;
 }
 
-
 .yorum .yorumic p{
 	color: #444;
-	font-size: 13px;
+	font-size: 14px;
 	line-height: 20px;
 }
 
@@ -1432,4 +1427,78 @@ ul.abonelikler li a span{
 
 .modal .begenenler-liste .begenen .islem .kirmizi{
 	color: #b33939;
+}
+
+.yorumyap label{
+	margin-bottom: 12px;
+	display: block;
+	font-size: 15px;
+	font-weight: 500;
+}
+
+.yorumyap label span{
+	float: right;
+	color: #833471;
+}
+
+.yorumyap textarea{
+	width: calc(100% - 20px);
+	line-height: 20px;
+	height: 60px;
+	max-height: 150px;
+	min-height: 60px;
+	min-width: calc(100% - 20px);
+	max-width: calc(100% - 20px);
+	border: 1px solid #dfdfdf;
+	padding: 10px;
+	border-radius: 4px;
+	display: block;
+	margin-bottom: 14px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 15px;
+}
+
+.yorumyap textarea:focus{
+	outline: 0;
+}
+
+.yorumyap button{
+	width: auto;
+	height: auto;
+	padding: 8px 15px;
+	font-size: 15px;
+	cursor: pointer;
+	border-radius: 4px;
+	float: right;
+}
+
+.yorumyap button:focus{
+	outline: 0;
+}
+
+.yorumyap button.temizle{
+	background: #dfe6e9;
+	border: 1px solid #dcdde1;
+	color: #333;
+	margin-right: 7px;
+}
+
+.yorumyap button.paylas{
+	background: #1e90ff;
+	border: 1px solid #2d98da;
+	color: #fff;
+	padding: 8px 20px;
+}
+
+.yorum .cevaplar{
+	margin-top: 20px;
+	margin-left: 60px;
+}
+
+.yorum .etiket{
+	background: #444;
+	padding: 2px 8px;
+	color: #fff;
+	border-radius: 10px;
+	margin-right: 6px;
 }
