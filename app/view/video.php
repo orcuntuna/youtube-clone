@@ -72,7 +72,7 @@
 						if(yorum_sayisi($vd["id"]) > 0){
 
 							$vd_id = $vd["id"];
-							$ana_yorumlar = $db->query("SELECT * FROM yorum WHERE video_id = {$vd_id} AND parent_id = 0 ORDER BY yorum_id DESC", PDO::FETCH_ASSOC);
+							$ana_yorumlar = $db->query("SELECT * FROM yorum WHERE video_id = {$vd_id} AND parent_id = 0 ORDER BY yorum_id ASC", PDO::FETCH_ASSOC);
 							if($ana_yorumlar->rowCount()){
 								foreach ($ana_yorumlar as $ana_yorum) {
 									$anayorumid = $ana_yorum["yorum_id"];

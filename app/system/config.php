@@ -4,7 +4,7 @@
 $config['site_url'] = 'http://localhost/youtube/';
 
 // Yüklenecek helper dosyaları
-$config['helpers'] = array('url','form','uyelik','kanal','video');
+$config['helpers'] = array('url','genel','form','uyelik','kanal','video');
 
 // Veritabanı bağlantı bilgileri
 $config['db'] = array(

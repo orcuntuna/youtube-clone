@@ -1,0 +1,149 @@
+body{
+	color: #fff;
+	background: #333;
+}
+
+a{
+	color: #ddd;
+}
+
+hr{
+	border-color: #656161;
+}
+
+.sidebar{
+	background: #222;
+	border-color: #000;
+}
+
+.sidebar ul li a{
+	color: #ccc;
+	background: #222;
+}
+
+.sidebar label{
+	color: #eee;
+}
+
+.sidebar ul li a i{
+	color: #eee;
+}
+
+.ustmenu{
+	background: #222;
+	box-shadow: 0px 0px 5px 0px rgba(0,0,0,1);
+}
+
+.ustmenu .ara input[type="text"]{
+	background: #000;
+	border-color: #000;
+}
+
+.ustmenu .ara button.submit{
+	background: #000;
+	border-color: #000;
+	color: #fff;
+}
+
+.ustmenu .giris a.buton{
+	color: #fff;
+	background: #000;
+	border-color: #000;
+}
+
+.kutu{
+	background: #222;
+	border-color: #111;
+	color: #eee;
+}
+
+.kutu label{
+	color: #eee;
+}
+
+.kanalust .kanalbilgi h1{
+	color: #fff;
+}
+
+.kanalust .kanalbilgi .abonesayisi{
+	color: #bbb;
+}
+
+.tabust .siralama{
+	background: #111;
+	border-color: #222;
+	color: #eee;
+}
+
+.tabbaslik ul li a{
+	color: #eee;
+}
+
+.tabbaslik ul li.active a{
+	color: #fff;
+	border-color: #fff;
+}
+
+.tabbaslik ul li a:hover{
+	color: #fff;
+}
+
+.kanalvideo .baslik a{
+	color: #ddd;
+}
+
+.kanalvideo p b{
+	color: #aaa;
+}
+
+.kanalvideo p{
+	color: #bbb;
+}
+
+.sidebaric::-webkit-scrollbar{
+  width: 4px;
+  height: 4px;
+}
+.sidebaric::-webkit-scrollbar-button{
+  width: 0px;
+  height: 0px;
+}
+.sidebaric::-webkit-scrollbar-thumb{
+  background: #656161;
+  border: 0px none #222;
+  border-radius: 50px;
+}
+.sidebaric::-webkit-scrollbar-thumb:hover{
+  background: #656161;
+}
+.sidebaric::-webkit-scrollbar-thumb:active{
+  background: #000000;
+}
+.sidebaric::-webkit-scrollbar-track{
+  background: #222;
+  border: 0px none #222;
+  border-radius: 50px;
+}
+.sidebaric::-webkit-scrollbar-track:hover{
+  background: #222;
+}
+.sidebaric::-webkit-scrollbar-track:active{
+  background: #222;
+}
+.sidebaric::-webkit-scrollbar-corner{
+  background: transparent;
+}
+
+.hesabim{
+	background: #eee;
+}
+
+.hesabim a{
+	color: #000;
+}
+
+.kanalust .aboneol a.aboneolundubuton{
+	color: #eee;
+	background: #000;
+	border-color: #000;
+}

@@ -238,7 +238,20 @@ if($_POST){
 
 	}
 
+	// gece modu
 
+	if(post('type') == "gecemodu"){
+
+		if(isset($_COOKIE["yt_gece_modu"])){
+			setcookie("yt_gece_modu", 0, time() - 1);
+			unset($_COOKIE["yt_gece_modu"]);
+			echo "ok";
+		}else{
+			setcookie("yt_gece_modu", 1, time() + 60 * 60 * 24 * 30);
+			echo "ok";
+		}
+
+	}
 
 
 }else{

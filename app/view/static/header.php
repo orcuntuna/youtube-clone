@@ -12,6 +12,7 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo assets_url(); ?>/lib/plyr/plyr.css">
 	<link rel="icon" type="image/png" href="<?php echo assets_url(); ?>img/favicon.png">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+	<?php gece_modu("dark.css"); ?>
 </head>
 <body>
 
@@ -44,6 +45,13 @@
 					<a href="<?php echo base_url('kanal?id='.$uye['id']); ?>">Kanalım</a>
 					<a href="<?php echo base_url('hesabim'); ?>">Hesap Ayarları</a>
 					<a href="<?php echo base_url('hesabim'); ?>">Video Yöneticisi</a>
+					<?php
+						if(isset($_COOKIE["yt_gece_modu"])){
+							echo '<a id="gecemodu_buton" href="javascript:void(0)">Gündüz Modu</a>';
+						}else{
+							echo '<a id="gecemodu_buton" href="javascript:void(0)">Gece Modu</a>';
+						}
+					?>
 					<a href="<?php echo base_url('cikis'); ?>">Çıkış Yap</a>
 				</div>
 

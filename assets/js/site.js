@@ -189,6 +189,21 @@ $(function(){
 	    }, 1000);
 	});
 
+	$(".hesabim #gecemodu_buton").click(function(){
+		$.ajax({
+			type: 'POST',
+			url: ajax_url,
+			data: { type: 'gecemodu' },
+			success: function(cevap){
+				if(cevap == "ok"){
+					location.reload();
+				}else{
+					alert(cevap);
+				}
+			}
+		});
+	});
+
 });
 
 function hesabim(){
