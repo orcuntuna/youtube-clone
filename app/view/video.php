@@ -77,6 +77,7 @@
 								foreach ($ana_yorumlar as $ana_yorum) {
 									$anayorumid = $ana_yorum["yorum_id"];
 									$yorum_yapan = kanal_bilgileri($ana_yorum["uye_id"]);
+									$yorum_begeni_sayisi = yorum_begeni_sayisi($anayorumid);
 									?>
 									<div class="yorum">
 										<div class="yorumbox">
@@ -85,13 +86,13 @@
 											</div>
 											<div class="yorumic">
 												<a href="<?php echo kanal_url($yorum_yapan['id']); ?>" class="kanalisim"><?php echo $yorum_yapan["kanal"]; ?></a>
-												<span>(+12)</span>
+												<span><?php if(!empty($yorum_begeni_sayisi)){echo "(" . $yorum_begeni_sayisi . ")";} ?></span>
 												<p><?php echo htmlspecialchars(stripslashes(strip_tags(trim($ana_yorum["yorum"])))); ?></p>
 												<?php
 													$begeni_kontrol = yorumu_ben_begendim_mi($anayorumid);
 												?>
-												<a href="#" class="yorumbuton <?php if($begeni_kontrol == 1){echo 'active';} ?>"><i class="fa fa-thumbs-up"></i></a>
-												<a href="#" class="yorumbuton <?php if($begeni_kontrol == 2){echo 'active';} ?>"><i class="fa fa-thumbs-down"></i></a>
+												<a href="javascript:void(0)" islem="1" yorumid="<?php echo $anayorumid; ?>" class="yorumbuton yorumbegeni <?php if($begeni_kontrol == 1){echo 'active';} ?>"><i class="fa fa-thumbs-up"></i></a>
+												<a href="javascript:void(0)" islem="2" yorumid="<?php echo $anayorumid; ?>" class="yorumbuton yorumbegeni <?php if($begeni_kontrol == 2){echo 'active';} ?>"><i class="fa fa-thumbs-down"></i></a>
 												<a href="javascript:void(0)" class="yorumbuton yorumyanitla" yorum="<?php echo $anayorumid; ?>" etiket="0" kanal="<?php echo $yorum_yapan["kanal"]; ?>">Yanıtla</a>
 											</div>
 										</div>
@@ -104,6 +105,7 @@
 										foreach ($alt_yorumlar as $alt_yorum) {
 											$altyorumid = $alt_yorum["yorum_id"];
 											$yorum_yapan = kanal_bilgileri($alt_yorum["uye_id"]);
+											$yorum_begeni_sayisi = yorum_begeni_sayisi($altyorumid);
 											?>
 
 											<div class="yorumbox">
@@ -112,13 +114,13 @@
 												</div>
 												<div class="yorumic">
 													<a href="<?php echo kanal_url($yorum_yapan['id']); ?>" class="kanalisim"><?php echo $yorum_yapan["kanal"]; ?></a>
-													<span>(+12)</span>
+													<span><?php if(!empty($yorum_begeni_sayisi)){echo "(" . $yorum_begeni_sayisi . ")";} ?></span>
 													<p><?php if($alt_yorum["etiket"]){ echo '<a href="'.kanal_url(kanal_bilgileri($alt_yorum["etiket"], "id")).'" class="etiket">'.kanal_bilgileri($alt_yorum["etiket"], "kanal").'</a>'; } ?><?php echo htmlspecialchars(stripslashes(strip_tags(trim($alt_yorum["yorum"])))); ?></p>
 													<?php
 														$begeni_kontrol = yorumu_ben_begendim_mi($altyorumid);
 													?>
-													<a href="#" class="yorumbuton <?php if($begeni_kontrol == 1){echo 'active';} ?>"><i class="fa fa-thumbs-up"></i></a>
-													<a href="#" class="yorumbuton <?php if($begeni_kontrol == 2){echo 'active';} ?>"><i class="fa fa-thumbs-down"></i></a>
+													<a href="javascript:void(0)" islem="1" yorumid="<?php echo $altyorumid; ?>" class="yorumbuton yorumbegeni <?php if($begeni_kontrol == 1){echo 'active';} ?>"><i class="fa fa-thumbs-up"></i></a>
+													<a href="javascript:void(0)" islem="2" yorumid="<?php echo $altyorumid; ?>" class="yorumbuton yorumbegeni <?php if($begeni_kontrol == 2){echo 'active';} ?>"><i class="fa fa-thumbs-down"></i></a>
 													<a href="javascript:void(0)" class="yorumbuton yorumyanitla" yorum="<?php echo $anayorumid; ?>" etiket="<?php echo $yorum_yapan["id"]; ?>" kanal="<?php echo $yorum_yapan["kanal"]; ?>">Yanıtla</a>
 												</div>
 											</div>

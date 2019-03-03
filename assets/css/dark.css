@@ -37,6 +37,7 @@ hr{
 .ustmenu .ara input[type="text"]{
 	background: #000;
 	border-color: #000;
+	color: #eee;
 }
 
 .ustmenu .ara button.submit{
@@ -146,4 +147,59 @@ hr{
 	color: #eee;
 	background: #000;
 	border-color: #000;
+}
+
+.videobilgi .kanalbilgi a.kanalisim{
+	color: #eee;
+}
+
+.yorumlar h3{
+	color: #eee;
+}
+
+.yorumyap textarea{
+	background: #111;
+	border-color: #111;
+	color: #eee;
+}
+
+.yorum .yorumic a.kanalisim{
+	color: #eee;
+}
+
+.yorum .yorumic p{
+	color: #eee;
+}
+
+.yorum .yorumic a.yorumbuton{
+	color: #ddd;
+}
+
+.yorum .yorumic a.yorumbuton:hover{
+	background: #000;
+}
+
+
+.yorum .yorumic a.active{
+	color: #1B9CFC;
+}
+
+.yorum .etiket{
+	background: #aaa;
+	color: #111;
+}
+
+.sidebarvideo{
+	background: #333;
+	border-color: #333;
+}
+
+.sidebar .onerilen .kanal a{
+	color: #fff;
+}
+
+.videobilgi .begenibilgi a {
+	color: #eee;
+	border-color: #eee;
+	background-color: #333;
 }

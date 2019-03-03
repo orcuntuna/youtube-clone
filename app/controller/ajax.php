@@ -253,6 +253,55 @@ if($_POST){
 
 	}
 
+	// yorum beğeni
+
+	if(post('type') == "yorumbegeni"){
+		global $db;
+		$yorum_id = intval(post("yorumid"));
+		$islem = intval(post("islem"));
+		if(uyelik_kontrol()){
+
+			$uye_id = $_SESSION["uye_id"];
+
+			$suan_ne_yapmis_sorgu = $db->query("SELECT * FROM yorum_begeni WHERE uye_id = {$uye_id} && yorum_id = {$yorum_id}")->fetch(PDO::FETCH_ASSOC);
+			if($suan_ne_yapmis_sorgu){
+				$suan = $suan_ne_yapmis_sorgu["islem"];
+				$yapilmis = true;
+			}else{
+				$suan = 0;
+				$yapilmis = false;
+			}
+
+
+			if($suan == $islem){
+				$yapilacak = 0;
+			}else{
+				$yapilacak = $islem;
+			}
+
+			if(!$yapilmis){
+				// yeni ekle
+				$ekle = $db->prepare("INSERT INTO yorum_begeni (yorum_id,uye_id,islem) VALUES (?,?,?)")->execute(array($yorum_id,$uye_id,$yapilacak));
+				if($ekle){
+					echo "ok";
+				}else{
+					echo "bir sorun oluştu";
+				}
+			}else{
+				// guncelle
+				$guncelle = $db->prepare("UPDATE yorum_begeni SET islem = ? WHERE yorum_id = ? AND uye_id = ?")->execute(array($yapilacak,$yorum_id,$uye_id));
+				if($guncelle){
+					echo "ok";
+				}else{
+					echo "bir sorun oluştu";
+				}
+			}
+
+		}else{
+			echo "beğeni yapabilmek için giriş yapınız";
+		}
+	}
+
 
 }else{
 	die("Erişim reddedildi!");

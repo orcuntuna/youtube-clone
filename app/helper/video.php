@@ -123,3 +123,17 @@ function yorumu_ben_begendim_mi($yorum_id){
     }
     return 0;
 }
+
+function yorum_begeni_sayisi($yorum_id){
+    global $db;
+    $yorum_id = intval($yorum_id);
+    $yorum_pozitif = $db->query("SELECT COUNT(begeni_id) AS sayi FROM yorum_begeni WHERE islem = 1 AND yorum_id = {$yorum_id}")->fetch(PDO::FETCH_ASSOC);
+    $yorum_pozitif_sayi = $yorum_pozitif["sayi"];
+    $yorum_negatif = $db->query("SELECT COUNT(begeni_id) AS sayi FROM yorum_begeni WHERE islem = 2 AND yorum_id = {$yorum_id}")->fetch(PDO::FETCH_ASSOC);
+    $yorum_negatif_sayi = $yorum_negatif["sayi"];
+    $sonuc = $yorum_pozitif_sayi - $yorum_negatif_sayi;
+    if($sonuc > 0){
+        $sonuc = "+" . $sonuc;
+    }
+    return $sonuc;
+}

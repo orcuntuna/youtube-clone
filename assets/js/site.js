@@ -204,6 +204,27 @@ $(function(){
 		});
 	});
 
+	$(".yorum .yorumbegeni").click(function(){
+		var yorumid = $(this).attr("yorumid");
+		var islem = $(this).attr("islem");
+		$.ajax({
+			type: 'POST',
+			url: ajax_url,
+			data: {
+				type: 'yorumbegeni',
+				yorumid: yorumid,
+				islem: islem
+			},
+			success: function(cevap){
+				if(cevap == "ok"){
+					location.reload();
+				}else{
+					alert(cevap);
+				}
+			}
+		});
+	});
+
 });
 
 function hesabim(){
