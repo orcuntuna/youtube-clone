@@ -302,6 +302,27 @@ if($_POST){
 		}
 	}
 
+	// ajax search
+
+	if(post('type') == 'arama'){
+		global $db;
+		$bul = post("bul");
+		if(!empty($bul)){
+			$ara = $db->query("SELECT * FROM video WHERE baslik LIKE '%{$bul}%'", PDO::FETCH_ASSOC);
+			if($ara->rowCount()){
+				echo '<ul>';
+				foreach($ara as $video){
+					echo '<li><a href="'.base_url('video?id='.$video["id"]).'">';
+					echo $video["baslik"];
+					echo '</a></li>';
+				}
+				echo '</ul>';
+			}else{
+				die("empty");
+			}
+		}
+	}
+
 
 }else{
 	die("Erişim reddedildi!");

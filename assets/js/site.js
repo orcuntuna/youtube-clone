@@ -225,6 +225,29 @@ $(function(){
 		});
 	});
 
+	$("#q").on("input", function(){
+		var deger = $("#q").val();
+		if(deger.length > 0){
+			$.ajax({
+				type: 'POST',
+				url: ajax_url,
+				data: { type:'arama', bul:deger },
+				success: function(cevap){
+					if(cevap != "empty"){
+						$(".arama-onerileri").show();
+						$(".arama-onerileri").html(cevap);
+					}else{
+						$(".arama-onerileri").hide();
+						$(".arama-onerileri").html("");
+					}
+				}
+			});
+		}else{
+			$(".arama-onerileri").hide();
+			$(".arama-onerileri").html("");
+		}
+	});
+
 });
 
 function hesabim(){

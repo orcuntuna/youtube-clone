@@ -27,9 +27,10 @@
 
 			<div class="ara">
 				<form method="get" action="<?php echo base_url('ara'); ?>">
-					<input type="text" name="q" placeholder="Video aramak için giriniz..">
+					<input type="text" id="q" name="q" placeholder="Video aramak için giriniz..">
 					<button class="submit"><i class="fa fa-search"></i></button>
 				</form>
+				<div class="arama-onerileri"></div>
 			</div><!--ara-->
 
 			<div class="giris">
