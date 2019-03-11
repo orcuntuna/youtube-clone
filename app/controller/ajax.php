@@ -313,7 +313,7 @@ if($_POST){
 				echo '<ul>';
 				foreach($ara as $video){
 					echo '<li><a href="'.base_url('video?id='.$video["id"]).'">';
-					echo $video["baslik"];
+					echo str_replace($bul, "<b>".$bul."</b>", $video["baslik"]);
 					echo '</a></li>';
 				}
 				echo '</ul>';

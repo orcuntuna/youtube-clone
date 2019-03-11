@@ -148,97 +148,35 @@
 			</div><!--site-->
 
 			<div class="sidebar sidebarvideo" id="sidebar">
-				<div class="sidebaric">
-					
-					<div class="onerilen">
-						<div class="onizleme"><i class="fa fa-play-circle"></i></div>
-						<a href="#" title="#"><img src="assets/img/video/1.jpg"></a>
-						<div class="baslik">
-							<a href="#" title="#">Oğuzhan Uğur feat Murat Dalkılıç - Mağlubiyet (Official Video)</a>
-						</div>
-						<p class="kanal"><a href="#" title="#">Poll Production</a></p>
-					</div><!--onerilen-->
+				<div class="sidebaric sidebaricvideo">
 
-					<div class="onerilen">
-						<div class="onizleme"><i class="fa fa-play-circle"></i></div>
-						<a href="#" title="#"><img src="assets/img/video/1.jpg"></a>
-						<div class="baslik">
-							<a href="#" title="#">Oğuzhan Uğur feat Murat Dalkılıç - Mağlubiyet (Official Video)</a>
-						</div>
-						<p class="kanal"><a href="#" title="#">Poll Production</a></p>
-					</div><!--onerilen-->
+					<?php
 
-					<div class="onerilen">
-						<div class="onizleme"><i class="fa fa-play-circle"></i></div>
-						<a href="#" title="#"><img src="assets/img/video/1.jpg"></a>
-						<div class="baslik">
-							<a href="#" title="#">Oğuzhan Uğur feat Murat Dalkılıç - Mağlubiyet (Official Video)</a>
-						</div>
-						<p class="kanal"><a href="#" title="#">Poll Production</a></p>
-					</div><!--onerilen-->
+					$kategori = $vd["kategori"];
+					$vid = $vd["id"];
 
-					<div class="onerilen">
-						<div class="onizleme"><i class="fa fa-play-circle"></i></div>
-						<a href="#" title="#"><img src="assets/img/video/1.jpg"></a>
-						<div class="baslik">
-							<a href="#" title="#">Oğuzhan Uğur feat Murat Dalkılıç - Mağlubiyet (Official Video)</a>
-						</div>
-						<p class="kanal"><a href="#" title="#">Poll Production</a></p>
-					</div><!--onerilen-->
+					if(!empty($kategori)){
+						$benzer_videolar = $db->query("SELECT * FROM video WHERE kategori = {$kategori} AND id != {$vid} ORDER BY tarih DESC LIMIT 10", PDO::FETCH_ASSOC);
+						if($benzer_videolar->rowCount()){
+							foreach ($benzer_videolar as $bv) {
+								$bv_url = base_url() . "video?id=" . $bv["id"];
+								$bv_img = base_url() . "upload/kapak/" . $bv["kapak"];
+								?>
+								<div class="onerilen">
+								
+									<a href="<?php echo $bv_url; ?>" title="<?php echo $bv["baslik"]; ?>"><img src="<?php echo $bv_img; ?>"></a>
+									<div class="baslik">
+										<a href="<?php echo $bv_url; ?>" title="<?php echo $bv["baslik"]; ?>"><?php echo $bv["baslik"]; ?></a>
+									</div>
+									<p class="kanal"><a href="<?php echo kanal_url($bv["kanal"]); ?>" title="<?php echo kanal_bilgileri($vd["kanal"], "kanal"); ?>"><?php echo kanal_bilgileri($vd["kanal"], "kanal"); ?></a></p>
+								</div><!--onerilen-->
+								<div class="clearfix"></div>
+								<?php
+							}
+						}
+					}
 
-					<div class="onerilen">
-						<div class="onizleme"><i class="fa fa-play-circle"></i></div>
-						<a href="#" title="#"><img src="assets/img/video/1.jpg"></a>
-						<div class="baslik">
-							<a href="#" title="#">Oğuzhan Uğur feat Murat Dalkılıç - Mağlubiyet (Official Video)</a>
-						</div>
-						<p class="kanal"><a href="#" title="#">Poll Production</a></p>
-					</div><!--onerilen-->
-
-					<div class="onerilen">
-						<div class="onizleme"><i class="fa fa-play-circle"></i></div>
-						<a href="#" title="#"><img src="assets/img/video/1.jpg"></a>
-						<div class="baslik">
-							<a href="#" title="#">Oğuzhan Uğur feat Murat Dalkılıç - Mağlubiyet (Official Video)</a>
-						</div>
-						<p class="kanal"><a href="#" title="#">Poll Production</a></p>
-					</div><!--onerilen-->
-
-					<div class="onerilen">
-						<div class="onizleme"><i class="fa fa-play-circle"></i></div>
-						<a href="#" title="#"><img src="assets/img/video/1.jpg"></a>
-						<div class="baslik">
-							<a href="#" title="#">Oğuzhan Uğur feat Murat Dalkılıç - Mağlubiyet (Official Video)</a>
-						</div>
-						<p class="kanal"><a href="#" title="#">Poll Production</a></p>
-					</div><!--onerilen-->
-
-					<div class="onerilen">
-						<div class="onizleme"><i class="fa fa-play-circle"></i></div>
-						<a href="#" title="#"><img src="assets/img/video/1.jpg"></a>
-						<div class="baslik">
-							<a href="#" title="#">Oğuzhan Uğur feat Murat Dalkılıç - Mağlubiyet (Official Video)</a>
-						</div>
-						<p class="kanal"><a href="#" title="#">Poll Production</a></p>
-					</div><!--onerilen-->
-
-					<div class="onerilen">
-						<div class="onizleme"><i class="fa fa-play-circle"></i></div>
-						<a href="#" title="#"><img src="assets/img/video/1.jpg"></a>
-						<div class="baslik">
-							<a href="#" title="#">Oğuzhan Uğur feat Murat Dalkılıç - Mağlubiyet (Official Video)</a>
-						</div>
-						<p class="kanal"><a href="#" title="#">Poll Production</a></p>
-					</div><!--onerilen-->
-
-					<div class="onerilen">
-						<div class="onizleme"><i class="fa fa-play-circle"></i></div>
-						<a href="#" title="#"><img src="assets/img/video/1.jpg"></a>
-						<div class="baslik">
-							<a href="#" title="#">Oğuzhan Uğur feat Murat Dalkılıç - Mağlubiyet (Official Video)</a>
-						</div>
-						<p class="kanal"><a href="#" title="#">Poll Production</a></p>
-					</div><!--onerilen-->
+					?>	
 
 				</div><!--sidebaric-->
 			</div><!--sidebar-->

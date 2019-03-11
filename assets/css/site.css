@@ -585,7 +585,15 @@ input.textbox{
 }
 
 .sidebar .onerilen{
-	margin-bottom: 10px;
+	margin-top: 12px;
+}
+
+.sidebar .onerilen:first-child{
+	margin-top: 0px;
+}
+
+.sidebaricvideo{
+	margin-top: -10px;
 }
 
 .sidebar .onerilen .onizleme{
@@ -1527,4 +1535,8 @@ ul.abonelikler li a span{
 	color: #333;
 	padding: 10px 10px;
 	font-size: 16px;
+}
+
+.arama-onerileri ul li a b{
+	font-weight: bold;
 }

@@ -28,5 +28,3 @@ if($_url[0] == 'admin'){
 	}
 	require 'app/controller/'. $_url[0] . '.php';
 }
-
-

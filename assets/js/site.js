@@ -2,6 +2,13 @@ $(function(){
 
 	if($("body").has("#player")){
 		const player = new Plyr('#player');
+		var bitti_mi = false;
+		const sayac = setInterval(function(){
+			if(player.ended == true && bitti_mi == false){
+				bitti_mi = true;
+				alert(1);
+			}
+		}, 1000);
 	}
 
 	if($("body").has(".devaminigor")){

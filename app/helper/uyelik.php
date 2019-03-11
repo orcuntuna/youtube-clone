@@ -54,15 +54,6 @@ function hash_olustur($eposta,$sifre){
 	return md5(sha1(sha1($eposta) . sha1($sifre) . md5($_SERVER['HTTP_USER_AGENT'])));
 }
 
-function kanal_url($id){
-	global $db;
-	$id = intval($id);
-	$kontrol = $db->query("SELECT * FROM uyeler WHERE id = {$id}")->fetch(PDO::FETCH_ASSOC);
-	if($kontrol){
-		return base_url('kanal?id='.$kontrol['id']);
-	}
-	return false;
-}
 
 function kanal_img($id){
 	global $db;

@@ -44,3 +44,14 @@ function view($view)
 	}
 	return false;
 }
+
+// kanal url
+function kanal_url($id){
+	global $db;
+	$id = intval($id);
+	$kontrol = $db->query("SELECT * FROM uyeler WHERE id = {$id}")->fetch(PDO::FETCH_ASSOC);
+	if($kontrol){
+		return base_url('kanal?id='.$kontrol['id']);
+	}
+	return false;
+}
