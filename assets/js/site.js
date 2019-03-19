@@ -1,14 +1,24 @@
 $(function(){
 
-	if($("body").has("#player")){
+	var sayac;
+
+	if($("#player").length){
 		const player = new Plyr('#player');
-		var bitti_mi = false;
-		const sayac = setInterval(function(){
-			if(player.ended == true && bitti_mi == false){
-				bitti_mi = true;
-				alert(1);
-			}
-		}, 1000);
+
+		if(otomatik_oynatma == 1){
+			var bitti_mi = false;
+			sayac = setInterval(function(){
+				console.log("say");
+				if(player.ended == true && bitti_mi == false){
+					bitti_mi = true;
+					if(siradaki){
+						window.location = siradaki;
+					}
+				}
+			}, 1000);
+		}
+		
+
 	}
 
 	if($("body").has(".devaminigor")){
@@ -253,6 +263,65 @@ $(function(){
 			$(".arama-onerileri").hide();
 			$(".arama-onerileri").html("");
 		}
+	});
+
+	$("button.dahaFazlaVideoKanal").click(function(){
+		$.ajax({
+			type: 'POST',
+			url: ajax_url,
+			data: { type:'dahafazlagosterkanal', adet:limit, mevcut:mevcut, kanal:kanal, order:order, order_by:order_by  },
+			success: function(cevap){
+				if(cevap != "yok"){
+					$(".eklenecekVideolar").append(cevap);
+					mevcut += limit;
+				}else{
+					$(".dahaFazlaVideoKanal").hide();
+				}
+			}
+		});
+	});
+
+	$("#otoCheckbox").change(function(){
+		
+		var islem = $("#otoCheckbox").prop("checked");
+		if(islem){
+			islem = 1;
+		}else{
+			islem = 0;
+		}
+
+		if(islem == 0){
+			if(sayac){
+				clearInterval(sayac);
+			}
+		}else{
+			var bitti_mi = false;
+			sayac = setInterval(function(){
+				console.log("say");
+				if(player.ended == true && bitti_mi == false){
+					bitti_mi = true;
+					if(siradaki){
+						window.location = siradaki;
+					}
+				}
+			}, 1000);
+
+		}
+		
+		$.ajax({
+			type: 'POST',
+			url: ajax_url,
+			data: { type:'otomatikoynatma', islem:islem },
+			success: function(cevap){
+				if(cevap == "1"){
+					otomatik_oynatma = 1;
+				}else{
+					otomatik_oynatma = 0;
+				}
+			}
+		});
+
+
 	});
 
 });

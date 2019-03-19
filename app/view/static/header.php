@@ -45,7 +45,7 @@
 				<div class="hesabim">
 					<a href="<?php echo base_url('kanal?id='.$uye['id']); ?>">Kanalım</a>
 					<a href="<?php echo base_url('hesabim'); ?>">Hesap Ayarları</a>
-					<a href="<?php echo base_url('hesabim'); ?>">Video Yöneticisi</a>
+					<a href="<?php echo base_url('videolarim'); ?>">Video Yöneticisi</a>
 					<?php
 						if(isset($_COOKIE["yt_gece_modu"])){
 							echo '<a id="gecemodu_buton" href="javascript:void(0)">Gündüz Modu</a>';

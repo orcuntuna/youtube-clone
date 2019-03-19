@@ -18,7 +18,7 @@
 					<div class="videobilgi">
 						<div class="kanalbilgi">
 							<a href="<?php echo kanal_url($vd["kanal"]); ?>">
-								<img src="<?php echo upload_url("profil/".$kanal["resim"]); ?>">
+								<img src="<?php echo kanal_resim($kanal["id"]); ?>">
 							</a>
 							<div class="kanalbilgitext">
 								<a href="<?php echo kanal_url($vd["kanal"]); ?>" class="kanalisim"><?php echo $kanal["kanal"]; ?> <?php if($kanal["dogrulanmis"] == 1){echo '<i title="Doğrulanmış Kanal" class="fa fa-check-circle"></i>';} ?></a>
@@ -82,7 +82,7 @@
 									<div class="yorum">
 										<div class="yorumbox">
 											<div class="yorumresim">
-												<a href="<?php echo kanal_url($yorum_yapan['id']); ?>"><img src="<?php echo upload_url('profil') . '/' . $yorum_yapan['resim']; ?>" width="45" height="45"></a>
+												<a href="<?php echo kanal_url($yorum_yapan['id']); ?>"><img src="<?php echo kanal_resim($yorum_yapan['id']); ?>" width="45" height="45"></a>
 											</div>
 											<div class="yorumic">
 												<a href="<?php echo kanal_url($yorum_yapan['id']); ?>" class="kanalisim"><?php echo $yorum_yapan["kanal"]; ?></a>
@@ -110,7 +110,7 @@
 
 											<div class="yorumbox">
 												<div class="yorumresim">
-													<a href="<?php echo kanal_url($yorum_yapan['id']); ?>"><img src="<?php echo upload_url('profil') . '/' . $yorum_yapan['resim']; ?>" width="45" height="45"></a>
+													<a href="<?php echo kanal_url($yorum_yapan['id']); ?>"><img src="<?php echo kanal_resim($yorum_yapan['id']); ?>" width="45" height="45"></a>
 												</div>
 												<div class="yorumic">
 													<a href="<?php echo kanal_url($yorum_yapan['id']); ?>" class="kanalisim"><?php echo $yorum_yapan["kanal"]; ?></a>
@@ -150,17 +150,24 @@
 			<div class="sidebar sidebarvideo" id="sidebar">
 				<div class="sidebaric sidebaricvideo">
 
+
+					<div class="otomatikOynatma">
+						<label for="otoCheckbox"><input type="checkbox" id="otoCheckbox" <?php if(!empty($_COOKIE["yt_otomatik_oynatma"])){echo "checked";} ?>> Otomatik oynatma</label>
+					</div>
+
 					<?php
 
 					$kategori = $vd["kategori"];
 					$vid = $vd["id"];
+					$siradaki;
 
 					if(!empty($kategori)){
-						$benzer_videolar = $db->query("SELECT * FROM video WHERE kategori = {$kategori} AND id != {$vid} ORDER BY tarih DESC LIMIT 10", PDO::FETCH_ASSOC);
+						$benzer_videolar = $db->query("SELECT * FROM video WHERE kategori = {$kategori} AND id != {$vid} ORDER BY RAND() DESC LIMIT 10", PDO::FETCH_ASSOC);
 						if($benzer_videolar->rowCount()){
 							foreach ($benzer_videolar as $bv) {
 								$bv_url = base_url() . "video?id=" . $bv["id"];
 								$bv_img = base_url() . "upload/kapak/" . $bv["kapak"];
+								if(empty($siradaki)){$siradaki = $bv_url;}
 								?>
 								<div class="onerilen">
 								
@@ -168,7 +175,7 @@
 									<div class="baslik">
 										<a href="<?php echo $bv_url; ?>" title="<?php echo $bv["baslik"]; ?>"><?php echo $bv["baslik"]; ?></a>
 									</div>
-									<p class="kanal"><a href="<?php echo kanal_url($bv["kanal"]); ?>" title="<?php echo kanal_bilgileri($vd["kanal"], "kanal"); ?>"><?php echo kanal_bilgileri($vd["kanal"], "kanal"); ?></a></p>
+									<p class="kanal"><a href="<?php echo kanal_url($bv["kanal"]); ?>" title="<?php echo kanal_bilgileri($vd["kanal"], "kanal"); ?>"><?php echo kanal_bilgileri($bv["kanal"], "kanal"); ?></a></p>
 								</div><!--onerilen-->
 								<div class="clearfix"></div>
 								<?php
@@ -202,7 +209,7 @@
 
 						<div class="begenen">
 							<a class="kanalresim" href="<?php echo kanal_url($begenen["uye_id"]); ?>">
-								<img src="<?php echo upload_url("profil/".$begenen["resim"]); ?>">
+								<img src="<?php echo kanal_resim($begenen["id"]); ?>">
 							</a>
 							<a href="<?php echo kanal_url($begenen["uye_id"]); ?>" class="kanalisim"><?php echo $begenen["kanal"]; ?></a>
 							<div class="islem">
@@ -228,3 +235,19 @@
 			</div>
 		</div>
 	</div><!--modal-->
+
+	<script>
+		<?php
+		if(!empty($siradaki) && !empty($_COOKIE["yt_otomatik_oynatma"])){
+			echo "var otomatik_oynatma = 1;";
+			echo "var siradaki = '" . $siradaki . "';";
+		}else{
+			echo "var otomatik_oynatma = 0;";
+			if(empty($siradaki)){
+				echo "var siradaki = '" . video_url($vd["id"]) . "';";
+			}else{
+				echo "var siradaki = '" . $siradaki . "';";
+			}
+		}
+		?> 
+	</script>

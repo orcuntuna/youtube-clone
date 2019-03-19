@@ -1,5 +1,7 @@
 <?php
 
+$sayfaBasiVideo = 5;
+
 if(get('s')){
 	if(get('s') == "asc" || get('s') == "desc"){
 		$siralama = "ORDER BY izlenme " . get('s');
@@ -10,7 +12,7 @@ if(get('s')){
 	$siralama = "ORDER BY izlenme DESC";
 }
 
-$videolar = $db->query("SELECT * FROM video WHERE kanal = {$kanal_id} {$siralama}", PDO::FETCH_ASSOC);
+$videolar = $db->query("SELECT * FROM video WHERE kanal = {$kanal_id} {$siralama} LIMIT {$sayfaBasiVideo}", PDO::FETCH_ASSOC);
 if($videolar->rowCount()){
 	?>
 	<div class="tabust">
@@ -41,4 +43,20 @@ if($videolar->rowCount()){
 }
 ?>
 
+<div class="eklenecekVideolar"></div>
+
 <div class="clearfix"></div>
+
+<?php if($videolar->rowCount() > $sayfaBasiVideo): ?>
+<div class="dahafazla">
+	<button class="dahaFazlaVideoKanal">Daha Fazla Yükle</button>
+</div>
+<?php endif; ?>
+
+<script>
+	var limit = <?php echo $sayfaBasiVideo; ?>;
+	var mevcut = <?php echo $sayfaBasiVideo; ?>;
+	var kanal = <?php echo $kanal_id; ?>;
+	var order = '<?php echo get("s")=="asc" ? "asc" : "desc"; ?>';
+	var order_by = 'izlenme';	
+</script>

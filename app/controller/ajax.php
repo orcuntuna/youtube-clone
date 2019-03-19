@@ -324,6 +324,61 @@ if($_POST){
 	}
 
 
+	// lazy load kanal
+
+	if(post('type') == 'dahafazlagosterkanal'){
+		$order = strtolower(trim(post("order")));
+		if($order != "asc" && $order != "desc"){$order="desc";}
+		$order_by = post("order_by");
+		if($order_by != "tarih" && $order_by != "izlenme"){$order_by = "tarih";}
+		$kanal = intval(post("kanal"));
+		$mevcut = intval(post("mevcut"));
+		$adet = intval(post("adet"));
+		$limit = "LIMIT " . $mevcut . ", " . $adet;
+		$siralama = "ORDER BY {$order_by} {$order}";
+		//echo "SELECT * FROM video WHERE kanal = {$kanal} {$siralama} {$limit}";
+		$video_getir = $db->query("SELECT * FROM video WHERE kanal = {$kanal} {$siralama} {$limit}", PDO::FETCH_ASSOC);
+		if($video_getir->rowCount()){
+			foreach ($video_getir as $video) {
+				?>
+				<div class="kanalvideo">
+					<div class="onizleme"><i class="fa fa-play-circle"></i></div>
+					<div class="img">
+					<a href="<?php echo base_url() . "video?id=" . $video["id"]; ?>" title="<?php echo $video["baslik"]; ?>"><img src="<?php echo base_url() . "upload/kapak/" . $video["kapak"]; ?>"></a>
+					</div>
+					<div class="baslik">
+						<a href="<?php echo base_url() . "video?id=" . $video["id"]; ?>" title="<?php echo $video["baslik"]; ?>"><?php echo $video["baslik"]; ?></a>
+					</div>
+					<p><b>İzlenme: </b><?php echo izlenme_bilgisi($video["izlenme"]); ?><?php if(time() - $video['tarih'] < 86400){echo '<span class="yeni">yeni</span>';} ?></p>
+					<p><b>Eklenme tarihi: </b><?php echo tarih_bilgisi($video["tarih"]); ?></p>
+				</div><!--video-->
+				<?php
+			}
+		}else{
+			die("yok");
+		}
+
+	}
+
+
+	// otomatik oynatma
+
+	if(post('type') == 'otomatikoynatma'){
+		echo post("islem");
+		$islem = post("islem");
+		$cookie_isim = "yt_otomatik_oynatma";
+		$cookie_zaman  = time() + 60 * 60 * 24 * 30;
+		if($islem == 1){
+			setcookie($cookie_isim, 1, $cookie_zaman, "/");
+			echo "1";
+		}else{
+			unset($_COOKIE[$cookie_isim]);
+			setcookie($cookie_isim, null, 0 , "/");
+			echo "2";
+		}
+	}
+
+
 }else{
 	die("Erişim reddedildi!");
 }

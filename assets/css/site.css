@@ -233,7 +233,7 @@ hr {
 .siteic .video{
 	margin-left: 30px;
 	width: 190px;
-	height: 190px;
+	height: 180px;
 	border: none;
 	float: left;
 	margin-bottom: 20px;
@@ -1539,4 +1539,89 @@ ul.abonelikler li a span{
 
 .arama-onerileri ul li a b{
 	font-weight: bold;
+}
+
+.dahfazla{
+	clear: both;
+}
+
+.dahafazla button{
+	background-color: #eaeaea;
+	color: #666;
+	font-size: 14px;
+	font-weight: 600;
+	text-align: center;
+	height: 44px;
+	display: block;
+	border: none;
+	border-radius: 3px;
+	width: 100%;
+	margin-top: 20px;
+	cursor: pointer;
+	text-transform: uppercase;
+}
+
+.dahafazla button:focus{
+	outline: 0;
+}
+
+table.videolarim{
+	width: 100%;
+}
+
+table.videolarim thead td{
+	background: #555;
+	padding: 12px 0;
+	text-align: center;
+	color: #fff;
+	border-color: #333;
+}
+
+table.videolarim tr td{
+	border: 1px solid #ddd;
+	padding: 15px 10px;
+}
+
+table.videolarim tr td.ortala{
+	text-align: center;
+}
+
+table.videolarim tr td a{
+	text-decoration: none;
+	border: none;
+}
+
+table.videolarim tr td a:hover{
+	text-decoration: none;
+	border: none;
+}
+
+table.videolarim tr td a.sil{
+	text-decoration: none;
+	border: none;
+	background-color: #c30f15;
+	padding: 5px;
+	color: #fff;
+	border-radius: 5px;
+}
+
+table.videolarim tr td a.duzenle{
+	text-decoration: none;
+	border: none;
+	background-color: #009432;
+	padding: 5px;
+	color: #fff;
+	margin-right: 3px;
+	border-radius: 5px;
+}
+
+.otomatikOynatma{
+	margin-bottom: 16px;
+}
+
+.otomatikOynatma #otoCheckbox{
+}
+
+.otomatikOynatma label{
+	padding: 0;
 }

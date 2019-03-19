@@ -137,3 +137,22 @@ function yorum_begeni_sayisi($yorum_id){
     }
     return $sonuc;
 }
+
+function kategori_bilgileri($kat_id, $col=null){
+    global $db;
+    $kategori = $db->query("SELECT * FROM kategoriler WHERE id = {$kat_id}")->fetch(PDO::FETCH_ASSOC);
+    if($kategori){
+        if(empty($col)){
+            return $kategori;
+        }else{
+            if(isset($kategori[$col])){
+                return $kategori[$col];
+            }
+        }
+    }
+    return false;
+}
+
+function video_url($video_id){
+    return base_url() . "/video?id=" . $video_id;
+}
