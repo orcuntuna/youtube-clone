@@ -63,10 +63,19 @@ function video_izlenme_arttir($video_id){
     global $db;
     $video_kontrol = $db->query("SELECT * FROM video WHERE id = {$video_id}")->fetch(PDO::FETCH_ASSOC);
     if($video_kontrol){
+        if(isset($_SESSION["uye_id"])){
+            $uye_id = $_SESSION["uye_id"];
+            $bir_gun_oncesi = time() - (60*60*24);
+            $kontrol = $db->query("SELECT * FROM gecmis WHERE uye_id = {$uye_id} AND video_id = {$video_id} AND unix > {$bir_gun_oncesi}")->fetch(PDO::FETCH_ASSOC);
+            if(!$kontrol){
+                $ekle = $db->prepare("INSERT INTO gecmis (uye_id,video_id,unix) VALUES (?,?,?)")->execute(array($uye_id,$video_id,time()));
+            }
+        }
         if(!isset($_COOKIE["izlendi_video_".$video_id])){
             $guncelle = $db->prepare("UPDATE video SET izlenme = ? WHERE id = ?")->execute(array($video_kontrol["izlenme"]+1,$video_id));
             if($guncelle){
-                setcookie("izlendi_video_".$video_id, "1", time() + (86400 * 30), "/"); // 1 gün (izlendi_video_x) x: video_id
+                setcookie("izlendi_video_".$video_id, "1", time() + (60*60*24), "/"); // 1 gün (izlendi_video_x) x: video_id
+                // izlenen geçmiş videolara ekle
                 return true;
             }else{
                 return false;
