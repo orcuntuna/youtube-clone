@@ -1,7 +1,7 @@
 
 # Youtube-clone (purple)
 
-**Tamamlanma yüzdesi:** 55%
+**Tamamlanma yüzdesi:** 80%
 
 ## Yapılması gereken php.ini ayarları:
 
