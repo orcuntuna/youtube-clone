@@ -308,7 +308,7 @@ if($_POST){
 		global $db;
 		$bul = post("bul");
 		if(!empty($bul)){
-			$ara = $db->query("SELECT * FROM video WHERE baslik LIKE '%{$bul}%'", PDO::FETCH_ASSOC);
+			$ara = $db->query("SELECT * FROM video WHERE baslik LIKE '%{$bul}%' ORDER BY izlenme DESC LIMIT 6", PDO::FETCH_ASSOC);
 			if($ara->rowCount()){
 				echo '<ul>';
 				foreach($ara as $video){

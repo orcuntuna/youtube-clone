@@ -6,12 +6,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 	<meta name="description" content="Youtube Ödevi">
 	<link rel="stylesheet" type="text/css" href="<?php echo assets_url(); ?>css/reset.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo assets_url(); ?>font/roboto.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo assets_url(); ?>css/grid.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo assets_url(); ?>css/site.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo assets_url(); ?>lib/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo assets_url(); ?>/lib/plyr/plyr.css">
 	<link rel="icon" type="image/png" href="<?php echo assets_url(); ?>img/favicon.png">
-	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
 	<?php gece_modu("dark.css"); ?>
 </head>
 <body>
