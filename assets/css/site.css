@@ -1677,6 +1677,12 @@ table.videolarim tr td a.duzenle{
 	margin-right: 8px;
 }
 
+.anketler .anket p span{
+	color: darkblue;
+	font-weight: 500;
+	margin-left: 10px;
+}
+
 .anketler .anket .cevaplar{
 	margin-left: 25px;
 }
@@ -1690,7 +1696,7 @@ table.videolarim tr td a.duzenle{
 }
 
 .anketler .anket .hayir{
-	color: red;
+	color: darkred;
 }
 
 .anketler .gonder button{
@@ -1706,6 +1712,11 @@ table.videolarim tr td a.duzenle{
 	font-size: 15px;
 	cursor: pointer;
 	outline: 0;
+}
+
+.anketler .gonder button.gonderildi{
+	background: darkred;
+	cursor: default;
 }
 
 .anketler .sonuclar{
