@@ -1660,3 +1660,65 @@ table.videolarim tr td a.duzenle{
 	padding-bottom: 15px;
 	border-bottom: 1px solid #ddd;
 }
+
+.anketler .anket{
+	border: 1px solid #ddd;
+	border-bottom: 0;
+	padding: 20px;
+}
+
+.anketler .anket p{
+	font-size: 16px;
+	margin-bottom: 10px;
+}
+
+.anketler .anket i{
+	font-size: 20px;
+	margin-right: 8px;
+}
+
+.anketler .anket .cevaplar{
+	margin-left: 25px;
+}
+
+.anketler .anket label{
+	margin-right: 5px;
+}
+
+.anketler .anket .evet{
+	color: green;
+}
+
+.anketler .anket .hayir{
+	color: red;
+}
+
+.anketler .gonder button{
+	background: blue;
+	height: 50px;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	color: #fff;
+	border: none;
+	font-family: 'Roboto', sans-serif;
+	font-size: 15px;
+	cursor: pointer;
+	outline: 0;
+}
+
+.anketler .sonuclar{
+	margin-bottom: 8px;
+}
+
+.anketler .sonuclar progress{
+	margin-left: 30px;
+	margin-top: 15px;
+	height: 20px;
+	width: 400px;
+}
+
+.anketler .sonuclar span{
+	margin-left: 5px;
+}

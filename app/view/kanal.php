@@ -60,7 +60,9 @@
 								<div id="tabHakkinda" class="tab <?php if(!empty($_url[1])){if($_url[1] == 'h'){echo 'active';}} ?>">
 									<?php if(!empty($_url[1])){if($_url[1] == 'h'){ include view('kanal/hakkinda'); }} ?>
 								</div>
-								<div id="tabAnket" class="tab <?php if(!empty($_url[1])){if($_url[1] == 'a'){echo 'active';}} ?>">anket</div>
+								<div id="tabAnket" class="tab <?php if(!empty($_url[1])){if($_url[1] == 'a'){echo 'active';}} ?>">
+									<?php if(!empty($_url[1])){if($_url[1] == 'a'){ include view('kanal/anket'); }} ?>
+								</div>
 							</div>
 
 						</div><!--kanalsayfa-->
