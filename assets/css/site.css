@@ -2,6 +2,14 @@
 	Mor: 933EC5
 */
 
+input{
+	color: #333;
+}
+
+.ustmenu .ara input[type="text"]{
+	background-color: #fff;
+}
+
 body{
 	background-color: #fff;
 	font-family: 'Roboto', sans-serif;
@@ -1624,4 +1632,31 @@ table.videolarim tr td a.duzenle{
 
 .otomatikOynatma label{
 	padding: 0;
+}
+
+.abonelik-sayfasi{
+	border: 1px solid #ddd;
+	border-bottom: 0;
+	border-radius: 2px;
+}
+
+.abonelik-sayfasi li{
+	padding: 5px 20px;
+	border-bottom: 1px solid #ddd;
+}
+
+.abonelik-sayfasi li a{
+	display: block;
+}
+
+.aramasonuclari{
+	border: 1px solid #ddd;
+	padding: 20px 25px;
+}
+
+.aramasonuclari h3{
+	font-size: 17px;
+	margin-bottom: 15px;
+	padding-bottom: 15px;
+	border-bottom: 1px solid #ddd;
 }

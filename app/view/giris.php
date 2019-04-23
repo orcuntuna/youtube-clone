@@ -37,7 +37,7 @@
 						<p>Parolanızı hatırlamıyorsanız sıfırlayabilirsiniz.</p>
 						<div class="inputbox">
 							<input type="text" name="isim" class="textbox uzuntextbox" placeholder="E-posta adresiniz">
-							<button type="submit" class="uzunbutton">Şifremi Gönder</button>
+							<button disabled type="submit" class="uzunbutton">Şifremi Gönder</button>
 						</div>
 					</form>
 				</div>

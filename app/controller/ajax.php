@@ -202,7 +202,7 @@ if($_POST){
 		$video_id = intval(post("video_id"));
 		$yorum = addslashes(strip_tags(trim(post("yorum"))));
 
-		if($_SESSION["uye_id"]){
+		if(session("uye_id")){
 			$uye_id = $_SESSION["uye_id"];
 		}else{
 			die("giriş yapmadan yorum yapamazsınız");

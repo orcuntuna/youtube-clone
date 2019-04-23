@@ -5,7 +5,7 @@
 	<title>Yönetim Paneli</title>
 	<link rel="stylesheet" type="text/css" href="<?php echo assets_url('css/admin.css'); ?>">
 	<link rel="stylesheet" type="text/css" href="<?php echo assets_url('lib/font-awesome/css/font-awesome.min.css'); ?>">
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="<?php echo assets_url(); ?>font/roboto.css">
 </head>
 <body>
 
