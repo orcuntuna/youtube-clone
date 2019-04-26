@@ -1,0 +1,14 @@
+# Kanal Girişleri: 
+
+orcun.tuna@hotmail.com - 12345678 (video yok)
+netd@gmail.com - 12345678 (video var)
+showhaber@gmail.com 12345678
+silavevo@gmail.com - 12345678
+oyunarsivi@gmail.com - 12345678
+trtspor@gmail.com - 123456
+
+# Admin Girişi
+
+/admin/ üzerinden
+
+orcun.tuna@outlook.com - 123456
