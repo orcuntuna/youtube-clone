@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 23, 2019 at 06:11 PM
+-- Generation Time: Apr 26, 2019 at 08:12 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.4
 
@@ -115,7 +115,15 @@ INSERT INTO `anket` (`id`, `soru_id`, `uye_id`, `kanal_id`, `puan`) VALUES
 (61, 1, 1, 5, 1),
 (62, 2, 1, 5, 1),
 (63, 3, 1, 5, 0),
-(64, 4, 1, 5, 1);
+(64, 4, 1, 5, 1),
+(65, 1, 2, 3, 0),
+(66, 2, 2, 3, 1),
+(67, 3, 2, 3, 0),
+(68, 4, 2, 3, 1),
+(69, 1, 2, 4, 1),
+(70, 2, 2, 4, 0),
+(71, 3, 2, 4, 1),
+(72, 4, 2, 4, 1);
 
 -- --------------------------------------------------------
 
@@ -237,7 +245,26 @@ INSERT INTO `gecmis` (`id`, `uye_id`, `video_id`, `tarih`, `unix`) VALUES
 (72, 1, 34, '2019-04-22 16:23:37', 1555950217),
 (73, 1, 28, '2019-04-22 16:23:38', 1555950218),
 (74, 1, 26, '2019-04-22 16:24:39', 1555950279),
-(75, 1, 31, '2019-04-23 16:04:37', 1556035477);
+(75, 1, 31, '2019-04-23 16:04:37', 1556035477),
+(76, 2, 11, '2019-04-23 16:20:20', 1556036420),
+(77, 2, 49, '2019-04-23 16:23:42', 1556036622),
+(78, 2, 16, '2019-04-23 16:27:34', 1556036854),
+(79, 2, 36, '2019-04-23 16:31:15', 1556037075),
+(80, 2, 36, '2019-04-25 16:08:58', 1556208538),
+(81, 2, 35, '2019-04-25 16:19:08', 1556209148),
+(82, 2, 12, '2019-04-25 16:23:33', 1556209413),
+(83, 2, 11, '2019-04-25 16:25:05', 1556209505),
+(84, 2, 49, '2019-04-25 13:28:27', 1556198907),
+(85, 2, 25, '2019-04-25 13:32:19', 1556199139),
+(86, 2, 39, '2019-04-25 13:36:52', 1556199412),
+(87, 2, 14, '2019-04-25 13:39:55', 1556199595),
+(88, 2, 13, '2019-04-25 13:51:29', 1556200289),
+(89, 2, 28, '2019-04-25 13:55:07', 1556200507),
+(90, 2, 48, '2019-04-25 14:47:57', 1556203677),
+(91, 2, 27, '2019-04-25 14:55:23', 1556204123),
+(92, 2, 37, '2019-04-25 15:19:37', 1556205577),
+(93, 2, 15, '2019-04-25 15:24:28', 1556205868),
+(94, 2, 16, '2019-04-25 15:24:36', 1556205876);
 
 -- --------------------------------------------------------
 
@@ -318,39 +345,39 @@ CREATE TABLE `video` (
 --
 
 INSERT INTO `video` (`id`, `kategori`, `kanal`, `baslik`, `aciklama`, `tarih`, `izlenme`, `kapak`, `video`) VALUES
-(11, 1, 1, 'Derya Uluğ - Canavar', 'Derya Uluğ, Canavar şarkısı için performansı ilk kez netd kanalında.', '1549403656', 15215, '6512bd43d9caa6e02c990b0a82652dca.jpg', '6512bd43d9caa6e02c990b0a82652dca.mp4'),
-(12, 1, 1, 'Beyazıt Öztürk - Gemilerde Talim Var', 'Beyaz gemilerde talim var', '1549403922', 3, 'c20ad4d76fe97759aa27a0c99bff6710.jpg', 'c20ad4d76fe97759aa27a0c99bff6710.mp4'),
-(13, 1, 1, 'Burak King - Koştum Hekime', 'burak king şarkısı', '1549403973', 4, 'c51ce410c124a10e0db5e4b97fc2af39.jpg', 'c51ce410c124a10e0db5e4b97fc2af39.mp4'),
-(14, 1, 1, 'Eda Baba - Her şey seninle güzel', 'eda baba', '1549404076', 3, 'aab3238922bcc25a6f606eb525ffdc56.jpg', 'aab3238922bcc25a6f606eb525ffdc56.mp4'),
-(15, 1, 1, 'IMERA - Sevdan ile feat Gaye Aksu', '', '1549404171', 4, '9bf31c7ff062936a96d3c8bd1f8f2ff3.jpg', '9bf31c7ff062936a96d3c8bd1f8f2ff3.mp4'),
-(16, 1, 1, 'Merve Özbey - Vuracak', 'Merve özbey mükemmel vuracak şarkısı', '1549404245', 10, 'c74d97b01eae257e44aa9d5bade97baf.jpg', 'c74d97b01eae257e44aa9d5bade97baf.mp4'),
+(11, 1, 1, 'Derya Uluğ - Canavar', 'Derya Uluğ, Canavar şarkısı için performansı ilk kez netd kanalında.', '1549403656', 15217, '6512bd43d9caa6e02c990b0a82652dca.jpg', '6512bd43d9caa6e02c990b0a82652dca.mp4'),
+(12, 1, 1, 'Beyazıt Öztürk - Gemilerde Talim Var', 'Beyaz gemilerde talim var', '1549403922', 4, 'c20ad4d76fe97759aa27a0c99bff6710.jpg', 'c20ad4d76fe97759aa27a0c99bff6710.mp4'),
+(13, 1, 1, 'Burak King - Koştum Hekime', 'burak king şarkısı', '1549403973', 5, 'c51ce410c124a10e0db5e4b97fc2af39.jpg', 'c51ce410c124a10e0db5e4b97fc2af39.mp4'),
+(14, 1, 1, 'Eda Baba - Her şey seninle güzel', 'eda baba', '1549404076', 4, 'aab3238922bcc25a6f606eb525ffdc56.jpg', 'aab3238922bcc25a6f606eb525ffdc56.mp4'),
+(15, 1, 1, 'IMERA - Sevdan ile feat Gaye Aksu', '', '1549404171', 5, '9bf31c7ff062936a96d3c8bd1f8f2ff3.jpg', '9bf31c7ff062936a96d3c8bd1f8f2ff3.mp4'),
+(16, 1, 1, 'Merve Özbey - Vuracak', 'Merve özbey mükemmel vuracak şarkısı', '1549404245', 12, 'c74d97b01eae257e44aa9d5bade97baf.jpg', 'c74d97b01eae257e44aa9d5bade97baf.mp4'),
 (18, 4, 3, 'Bu ismi taşıyan sadece 3 kişi var', 'Bu ismi taşıyan sadece 3 kişi var', '1552595313', 0, '6f4922f45568161a8cdf4ad2299f6d23.png', '6f4922f45568161a8cdf4ad2299f6d23.mp4'),
 (19, 4, 3, '11 yaşındaki çocuk doğum yaptı', '11 yaşındaki çocuk doğum yaptı', '1552595340', 0, '1f0e3dad99908345f7439f8ffabdffc4.png', '1f0e3dad99908345f7439f8ffabdffc4.mp4'),
 (20, 4, 3, 'Makyaj gitti aşk bitti', 'Makyaj gitti aşk bitti', '1552595414', 0, '98f13708210194c475687be6106a3b84.png', '98f13708210194c475687be6106a3b84.mp4'),
 (21, 4, 3, 'Utangaç gelin damadı çıldırttı', 'Utangaç gelin damadı çıldırttı', '1552595449', 1, '3c59dc048e8850243be8079a5c74d079.png', '3c59dc048e8850243be8079a5c74d079.mp4'),
 (22, 4, 3, 'Hırsız boksöre tosladı', 'Hırsız boksöre tosladı', '1552595471', 2, 'b6d767d2f8ed5d21a44b0e5886680cb9.png', 'b6d767d2f8ed5d21a44b0e5886680cb9.mp4'),
 (23, 4, 3, 'Şaka olduğunu anlayınca sunucuyu dövdü', 'Şaka olduğunu anlayınca sunucuyu dövdü', '1552595491', 2, '37693cfc748049e45d87b8c7d8b9aacd.png', '37693cfc748049e45d87b8c7d8b9aacd.mp4'),
-(25, 1, 4, 'Sila - Yabanci (Official Music Video)', 'Sila - Yabanci (Official Music Video)', '1552596292', 3, '8e296a067a37563370ded05f5a3bf3ec.jpg', '8e296a067a37563370ded05f5a3bf3ec.mp4'),
+(25, 1, 4, 'Sila - Yabanci (Official Music Video)', 'Sila - Yabanci (Official Music Video)', '1552596292', 4, '8e296a067a37563370ded05f5a3bf3ec.jpg', '8e296a067a37563370ded05f5a3bf3ec.mp4'),
 (26, 1, 4, 'Sila - Reverans (Official Music Video)', 'Sila - Reverans (Official Music Video)', '1552596353', 3, '4e732ced3463d06de0ca9a15b6153677.jpg', '4e732ced3463d06de0ca9a15b6153677.mp4'),
-(27, 1, 4, 'Sila - Oluruna Bırak (Official Music VIdeo)', 'Sila - Oluruna Bırak (Official Music VIdeo)', '1552596418', 3, '02e74f10e0327ad868d138f2b4fdd6f0.jpg', '02e74f10e0327ad868d138f2b4fdd6f0.mp4'),
-(28, 1, 4, 'Sila - Engerek (Official Music Video)', 'Sila - Engerek (Official Music Video)', '1552596463', 6, '33e75ff09dd601bbe69f351039152189.jpg', '33e75ff09dd601bbe69f351039152189.mp4'),
+(27, 1, 4, 'Sila - Oluruna Bırak (Official Music VIdeo)', 'Sila - Oluruna Bırak (Official Music VIdeo)', '1552596418', 4, '02e74f10e0327ad868d138f2b4fdd6f0.jpg', '02e74f10e0327ad868d138f2b4fdd6f0.mp4'),
+(28, 1, 4, 'Sila - Engerek (Official Music Video)', 'Sila - Engerek (Official Music Video)', '1552596463', 7, '33e75ff09dd601bbe69f351039152189.jpg', '33e75ff09dd601bbe69f351039152189.mp4'),
 (29, 5, 5, 'Xantares CS:GO En Güzel Vuruşları', 'Xantares CS:GO En Güzel Vuruşları', '1552596608', 3, '6ea9ab1baa0efb9e19094440c317e21b.jpg', '6ea9ab1baa0efb9e19094440c317e21b.mp4'),
 (30, 5, 5, 'PUBG: wtcn ve mithrain kapışıyor', 'PUBG: wtcn ve mithrain kapışıyor', '1552596659', 1, '34173cb38f07f89ddbebc2ac9128303f.jpg', '34173cb38f07f89ddbebc2ac9128303f.mp4'),
 (31, 5, 5, 'PES 2018 EN Güzel Goller ve Şutlar', 'PES 2018 EN Güzel Goller ve Şutlar', '1552596711', 1, 'c16a5320fa475530d9583c34fd356ef5.jpg', 'c16a5320fa475530d9583c34fd356ef5.mp4'),
 (32, 5, 5, 'Fortnite Turnuvasının Önemli Anları', 'Fortnite Turnuvasının Önemli Anları', '1552596811', 3, '6364d3f0f495b6ab9dcf8d3b5c6e0b01.jpg', '6364d3f0f495b6ab9dcf8d3b5c6e0b01.mp4'),
 (33, 5, 5, 'Half-Life Dünya Şampiyonu UNLOST Oynayışı', 'Half-Life Dünya Şampiyonu UNLOST', '1552596865', 2, '182be0c5cdcd5072bb1864cdee4d3d6e.jpg', '182be0c5cdcd5072bb1864cdee4d3d6e.mp4'),
 (34, 1, 1, 'Çağla - Saz mı caz mı?', 'Çağla - Saz mı caz mı?', '1552635602', 4, 'e369853df766fa44e1ed0ff613f563bd.jpg', 'e369853df766fa44e1ed0ff613f563bd.mp4'),
-(35, 1, 1, 'Yüzük - Oğuzhan Koç Official Video', 'yüzük', '1552635712', 3, '1c383cd30b7c298ab50293adfecb7b18.jpg', '1c383cd30b7c298ab50293adfecb7b18.mp4'),
-(36, 1, 1, 'Mabel Matiz - Öyle Kolaysa', 'Mabel Matiz - Öyle Kolaysa', '1552635801', 3, '19ca14e7ea6328a42e0eb13d585e4c22.jpg', '19ca14e7ea6328a42e0eb13d585e4c22.mp4'),
-(37, 1, 1, 'Göksel - Aşkın Yalanmış', 'Göksel - Aşkın Yalanmış', '1552635834', 4, 'a5bfc9e07964f8dddeb95fc584cd965d.jpg', 'a5bfc9e07964f8dddeb95fc584cd965d.mp4'),
-(39, 1, 1, 'Sancak - Düşün Ki', 'Sancak - Düşün Ki düzenlendi', '1552635929', 4, 'd67d8ab4f4c10bf22aa353e27879133c.jpg', 'd67d8ab4f4c10bf22aa353e27879133c.mp4'),
+(35, 1, 1, 'Yüzük - Oğuzhan Koç Official Video', 'yüzük', '1552635712', 4, '1c383cd30b7c298ab50293adfecb7b18.jpg', '1c383cd30b7c298ab50293adfecb7b18.mp4'),
+(36, 1, 1, 'Mabel Matiz - Öyle Kolaysa', 'Mabel Matiz - Öyle Kolaysa', '1552635801', 5, '19ca14e7ea6328a42e0eb13d585e4c22.jpg', '19ca14e7ea6328a42e0eb13d585e4c22.mp4'),
+(37, 1, 1, 'Göksel - Aşkın Yalanmış', 'Göksel - Aşkın Yalanmış', '1552635834', 5, 'a5bfc9e07964f8dddeb95fc584cd965d.jpg', 'a5bfc9e07964f8dddeb95fc584cd965d.mp4'),
+(39, 1, 1, 'Sancak - Düşün Ki', 'Sancak - Düşün Ki düzenlendi', '1552635929', 5, 'd67d8ab4f4c10bf22aa353e27879133c.jpg', 'd67d8ab4f4c10bf22aa353e27879133c.mp4'),
 (41, 2, 6, 'Beşiktaş 3-2 Konyaspor Maç Özeti', 'Beşiktaş 3-2 Konyaspor Maç Özeti', '1552636170', 3, '3416a75f4cea9109507cacd8e2f2aefc.Jpeg', '3416a75f4cea9109507cacd8e2f2aefc.mp4'),
 (42, 2, 6, 'Bursaspor 1 - 3 Trabzonspor #Özet', 'Bursaspor 1 - 3 Trabzonspor #Özet', '1552636207', 1, 'a1d0c6e83f027327d8461063f4ac58a6.jpg', 'a1d0c6e83f027327d8461063f4ac58a6.mp4'),
 (43, 2, 6, 'Hatayspor 4-2 Galatasaray - Maç Özeti Tüm Golleri', 'Hatayspor 4-2 Galatasaray - Maç Özeti Tüm Golleri', '1552636249', 2, '17e62166fc8586dfa4d1bc0e1742c08b.jpg', '17e62166fc8586dfa4d1bc0e1742c08b.mp4'),
 (44, 2, 6, 'Fenerbahçe 0-1 Ümraniyespor Maç Özeti', 'Fenerbahçe 0-1 Ümraniyespor Maç Özeti', '1552636313', 4, 'f7177163c833dff4b38fc8d2872f1ec6.jpg', 'f7177163c833dff4b38fc8d2872f1ec6.mp4'),
 (45, 2, 6, 'M. Başakşehir 3 - 2 Kasımpaşa #Özet', 'M. Başakşehir 3 - 2 Kasımpaşa #Özet', '1552636361', 1, '6c8349cc7260ae62e3b1396831a8398f.jpg', '6c8349cc7260ae62e3b1396831a8398f.mp4'),
-(48, 1, 1, 'BÖ - Unutursun', 'BÖ - Unutursun', '1552769785', 3, '642e92efb79421734881b53e1e1b18b6.jpg', '642e92efb79421734881b53e1e1b18b6.mp4'),
-(49, 1, 1, 'Mor ve Ötesi - Cambaz', 'cambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıi', '1552769820', 3, 'f457c545a9ded88f18ecee47145a72c0.jpg', 'f457c545a9ded88f18ecee47145a72c0.mp4');
+(48, 1, 1, 'BÖ - Unutursun', 'BÖ - Unutursun', '1552769785', 4, '642e92efb79421734881b53e1e1b18b6.jpg', '642e92efb79421734881b53e1e1b18b6.mp4'),
+(49, 1, 1, 'Mor ve Ötesi - Cambaz', 'cambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıicambaz şarkısıi', '1552769820', 5, 'f457c545a9ded88f18ecee47145a72c0.jpg', 'f457c545a9ded88f18ecee47145a72c0.mp4');
 
 -- --------------------------------------------------------
 
@@ -382,7 +409,8 @@ INSERT INTO `yorum` (`yorum_id`, `uye_id`, `video_id`, `parent_id`, `etiket`, `y
 (12, 2, 16, 1, 0, 'sadsadsa', '2019-03-08 08:40:40'),
 (15, 3, 23, 0, 0, 'deneme yapıyoruz', '2019-03-14 20:32:02'),
 (16, 4, 23, 0, 0, 'iyi dövmüş', '2019-03-14 20:33:31'),
-(17, 4, 12, 0, 0, 'günaydın', '2019-03-14 20:41:38');
+(17, 4, 12, 0, 0, 'günaydın', '2019-03-14 20:41:38'),
+(18, 2, 16, 0, 0, 'ttttt', '2019-04-25 15:24:50');
 
 -- --------------------------------------------------------
 
@@ -404,9 +432,12 @@ CREATE TABLE `yorum_begeni` (
 
 INSERT INTO `yorum_begeni` (`begeni_id`, `yorum_id`, `uye_id`, `islem`, `tarih`) VALUES
 (1, 1, 2, 1, '2019-02-24 11:36:33'),
-(2, 2, 2, 0, '2019-02-24 11:36:33'),
+(2, 2, 2, 1, '2019-02-24 11:36:33'),
 (11, 7, 2, 1, '2019-03-03 11:31:18'),
-(12, 15, 3, 1, '2019-03-14 20:32:05');
+(12, 15, 3, 1, '2019-03-14 20:32:05'),
+(13, 18, 2, 1, '2019-04-25 15:24:54'),
+(14, 3, 2, 1, '2019-04-25 15:24:56'),
+(15, 11, 2, 0, '2019-04-25 15:24:59');
 
 --
 -- Indexes for dumped tables
@@ -492,7 +523,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `anket`
 --
 ALTER TABLE `anket`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
 
 --
 -- AUTO_INCREMENT for table `begeni`
@@ -504,7 +535,7 @@ ALTER TABLE `begeni`
 -- AUTO_INCREMENT for table `gecmis`
 --
 ALTER TABLE `gecmis`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=95;
 
 --
 -- AUTO_INCREMENT for table `kategoriler`
@@ -528,13 +559,13 @@ ALTER TABLE `video`
 -- AUTO_INCREMENT for table `yorum`
 --
 ALTER TABLE `yorum`
-  MODIFY `yorum_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `yorum_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `yorum_begeni`
 --
 ALTER TABLE `yorum_begeni`
-  MODIFY `begeni_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `begeni_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
