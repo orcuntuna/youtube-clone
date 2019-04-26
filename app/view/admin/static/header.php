@@ -16,10 +16,10 @@
 				<h2>Yönetim Paneli</h2>
 
 				<ul>
-					<li class="active"><a href="#"><i class="fa fa-dashboard"></i>Anasayfa</a></li>
+					<li><a href="#"><i class="fa fa-dashboard"></i>Anasayfa</a></li>
 					<li><a href="#"><i class="fa fa-cog"></i>Site Ayarları</a></li>
 					<li><a href="#"><i class="fa fa-file"></i>Sayfalar</a></li>
-					<li><a href="#"><i class="fa fa-user"></i>Üyeler</a></li>
+					<li><a href="<?php echo base_url("admin/uyeler"); ?>"><i class="fa fa-user"></i>Üyeler</a></li>
 					<li><a href="#"><i class="fa fa-tag"></i>Kategoriler</a></li>
 					<li><a href="#"><i class="fa fa-play-circle"></i>Videolar</a></li>
 					<li><a href="#"><i class="fa fa-comment"></i>Yorumlar</a></li>

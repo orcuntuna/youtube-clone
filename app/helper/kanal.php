@@ -54,3 +54,9 @@ function anket_cevap($kanal_id, $soru_id, $uye_id){
         }
     }
 }
+
+function video_sayisi($id){
+    global $db;
+    $videolar = $db->query("SELECT COUNT(*) AS sayi FROM video WHERE kanal = {$id}")->fetch(PDO::FETCH_ASSOC);
+    return $videolar["sayi"]; 
+}

@@ -4,7 +4,14 @@ require_once 'config.php';
 
 session_start();
 
-define('BASE_URL', rtrim(trim($config['site_url']), '/').'/');
+
+$path = dirname(dirname(dirname(__FILE__)));
+$list = explode("/", $path);
+$script_path = end($list);
+
+$_base_url = "http://" . $_SERVER["SERVER_NAME"] . "/" .  trim($script_path , "/");
+
+define('BASE_URL', rtrim(trim($_base_url), '/').'/');
 define('BASE_DIR', dirname(dirname(__DIR__)).'/');
 
 // helperları dahil et
