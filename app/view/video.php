@@ -32,7 +32,31 @@
 								var begeni_like = <?php echo video_begeni_sayisi($vd["id"],"like"); ?>;
 								var begeni_dislike = <?php echo video_begeni_sayisi($vd["id"],"dislike"); ?>;
 							</script>
-							<a href="javascript:void(0)" class="begenenler" id="begenenler"><i class="fa fa-question"></i></a>
+							<a href="javascript:void(0)" class="begenenler" id="begenenler">
+								<?php
+
+									$video_id = $vd["id"];
+									$begenenler_sorgu = $db->query("SELECT * FROM begeni JOIN uyeler ON begeni.uye_id = uyeler.id WHERE begeni.video_id = {$video_id}", PDO::FETCH_ASSOC);
+									if($begenenler_sorgu->rowCount()){
+										$i = 0;
+										$begenenler_liste = [];
+										foreach ($begenenler_sorgu as $begenen) {
+											if($i < 3){
+												array_push($begenenler_liste, $begenen["kanal"]);
+												$i++;	
+											}
+										}
+										echo implode(", ", $begenenler_liste);
+										if($begenenler_sorgu->rowCount() > $i){
+											echo " ve " . ($begenenler_sorgu->rowCount() - $i) . " kişi daha";
+										}
+									}else{
+										echo "Kimse beğenmedi";
+									}
+
+
+								?>
+							</a>
 							<a href="javascript:void(0)" onclick="begeni(<?php echo $vd['id']; ?>,1)" class="like <?php if(ben_begendim_mi($vd["id"]) == 1){echo 'likeactive';} ?>"><i class="fa fa-thumbs-up"></i> <?php echo video_begeni_sayisi($vd["id"],"like"); ?></a>
 							<a href="javascript:void(0)" onclick="begeni(<?php echo $vd['id']; ?>,2)" class="dislike <?php if(ben_begendim_mi($vd["id"]) == 2){echo 'dislikeactive';} ?>"><i class="fa fa-thumbs-down"></i> <?php echo video_begeni_sayisi($vd["id"],"dislike"); ?></a>
 						</div><!--begenibilgi-->
