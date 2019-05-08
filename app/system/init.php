@@ -4,7 +4,6 @@ require_once 'config.php';
 
 session_start();
 
-/*
 
 ## base_url dinamik (alt dizin için) ## 
 
@@ -16,10 +15,9 @@ $script_path = end($new_list);
 $_base_url = "http://" . $_SERVER["SERVER_NAME"] . "/" .  trim($script_path , "/");
 define('BASE_URL', rtrim(trim($_base_url), '/').'/');
 
-*/
 
+#define('BASE_URL', rtrim(trim($config['site_url']), '/').'/')
 
-define('BASE_URL', rtrim(trim($config['site_url']), '/').'/');
 define('BASE_DIR', dirname(dirname(__DIR__)).'/');
 
 // helperları dahil et
